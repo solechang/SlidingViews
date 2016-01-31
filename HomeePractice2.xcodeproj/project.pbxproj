@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B94348771C5C1E4B00F42D75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348761C5C1E4B00F42D75 /* main.m */; };
+		B943487A1C5C1E4B00F42D75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348791C5C1E4B00F42D75 /* AppDelegate.m */; };
+		B94348821C5C1E4B00F42D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94348811C5C1E4B00F42D75 /* Assets.xcassets */; };
+		B94348851C5C1E4B00F42D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94348831C5C1E4B00F42D75 /* LaunchScreen.storyboard */; };
+		B94348901C5C1E4B00F42D75 /* HomeePractice2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B943488F1C5C1E4B00F42D75 /* HomeePractice2Tests.m */; };
+		B943489B1C5C1E4B00F42D75 /* HomeePractice2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B943489A1C5C1E4B00F42D75 /* HomeePractice2UITests.m */; };
+		B94348AA1C5C1FB700F42D75 /* HomeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348A91C5C1FB700F42D75 /* HomeeTableViewController.m */; };
+		B94348AD1C5C211400F42D75 /* RoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348AC1C5C211400F42D75 /* RoomCell.m */; };
+		B94348AF1C5C241000F42D75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94348AE1C5C241000F42D75 /* Main.storyboard */; };
+		B94348B11C5C264500F42D75 /* defaultIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B94348B01C5C264500F42D75 /* defaultIcon.png */; };
+		B94348B41C5C299D00F42D75 /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348B31C5C299D00F42D75 /* ChatTableViewController.m */; };
+		B94348B81C5C2E9200F42D75 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348B71C5C2E9200F42D75 /* ContainerViewController.m */; };
+		B94348BB1C5C34AE00F42D75 /* ShopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348BA1C5C34AE00F42D75 /* ShopTableViewController.m */; };
+		B94348BE1C5C3BA100F42D75 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348BD1C5C3BA100F42D75 /* DesignViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B943488C1C5C1E4B00F42D75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B943486A1C5C1E4B00F42D75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B94348711C5C1E4B00F42D75;
+			remoteInfo = HomeePractice2;
+		};
+		B94348971C5C1E4B00F42D75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B943486A1C5C1E4B00F42D75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B94348711C5C1E4B00F42D75;
+			remoteInfo = HomeePractice2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B94348721C5C1E4B00F42D75 /* HomeePractice2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeePractice2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B94348761C5C1E4B00F42D75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B94348781C5C1E4B00F42D75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B94348791C5C1E4B00F42D75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B94348811C5C1E4B00F42D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B94348841C5C1E4B00F42D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B94348861C5C1E4B00F42D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B943488B1C5C1E4B00F42D75 /* HomeePractice2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeePractice2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B943488F1C5C1E4B00F42D75 /* HomeePractice2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeePractice2Tests.m; sourceTree = "<group>"; };
+		B94348911C5C1E4B00F42D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B94348961C5C1E4B00F42D75 /* HomeePractice2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeePractice2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B943489A1C5C1E4B00F42D75 /* HomeePractice2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeePractice2UITests.m; sourceTree = "<group>"; };
+		B943489C1C5C1E4B00F42D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B94348A81C5C1FB700F42D75 /* HomeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeeTableViewController.h; sourceTree = "<group>"; };
+		B94348A91C5C1FB700F42D75 /* HomeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeeTableViewController.m; sourceTree = "<group>"; };
+		B94348AB1C5C211400F42D75 /* RoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomCell.h; sourceTree = "<group>"; };
+		B94348AC1C5C211400F42D75 /* RoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomCell.m; sourceTree = "<group>"; };
+		B94348AE1C5C241000F42D75 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B94348B01C5C264500F42D75 /* defaultIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultIcon.png; sourceTree = "<group>"; };
+		B94348B21C5C299D00F42D75 /* ChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewController.h; sourceTree = "<group>"; };
+		B94348B31C5C299D00F42D75 /* ChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewController.m; sourceTree = "<group>"; };
+		B94348B61C5C2E9200F42D75 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		B94348B71C5C2E9200F42D75 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		B94348B91C5C34AE00F42D75 /* ShopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTableViewController.h; sourceTree = "<group>"; };
+		B94348BA1C5C34AE00F42D75 /* ShopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewController.m; sourceTree = "<group>"; };
+		B94348BC1C5C3BA100F42D75 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
+		B94348BD1C5C3BA100F42D75 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B943486F1C5C1E4B00F42D75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B94348881C5C1E4B00F42D75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B94348931C5C1E4B00F42D75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B94348691C5C1E4B00F42D75 = {
+			isa = PBXGroup;
+			children = (
+				B94348741C5C1E4B00F42D75 /* HomeePractice2 */,
+				B943488E1C5C1E4B00F42D75 /* HomeePractice2Tests */,
+				B94348991C5C1E4B00F42D75 /* HomeePractice2UITests */,
+				B94348731C5C1E4B00F42D75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B94348731C5C1E4B00F42D75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B94348721C5C1E4B00F42D75 /* HomeePractice2.app */,
+				B943488B1C5C1E4B00F42D75 /* HomeePractice2Tests.xctest */,
+				B94348961C5C1E4B00F42D75 /* HomeePractice2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B94348741C5C1E4B00F42D75 /* HomeePractice2 */ = {
+			isa = PBXGroup;
+			children = (
+				B94348B51C5C29A600F42D75 /* Chat Room VCs */,
+				B94348B01C5C264500F42D75 /* defaultIcon.png */,
+				B94348781C5C1E4B00F42D75 /* AppDelegate.h */,
+				B94348791C5C1E4B00F42D75 /* AppDelegate.m */,
+				B94348AB1C5C211400F42D75 /* RoomCell.h */,
+				B94348AC1C5C211400F42D75 /* RoomCell.m */,
+				B94348A81C5C1FB700F42D75 /* HomeeTableViewController.h */,
+				B94348A91C5C1FB700F42D75 /* HomeeTableViewController.m */,
+				B94348B61C5C2E9200F42D75 /* ContainerViewController.h */,
+				B94348B71C5C2E9200F42D75 /* ContainerViewController.m */,
+				B94348AE1C5C241000F42D75 /* Main.storyboard */,
+				B94348811C5C1E4B00F42D75 /* Assets.xcassets */,
+				B94348831C5C1E4B00F42D75 /* LaunchScreen.storyboard */,
+				B94348861C5C1E4B00F42D75 /* Info.plist */,
+				B94348751C5C1E4B00F42D75 /* Supporting Files */,
+			);
+			path = HomeePractice2;
+			sourceTree = "<group>";
+		};
+		B94348751C5C1E4B00F42D75 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B94348761C5C1E4B00F42D75 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B943488E1C5C1E4B00F42D75 /* HomeePractice2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B943488F1C5C1E4B00F42D75 /* HomeePractice2Tests.m */,
+				B94348911C5C1E4B00F42D75 /* Info.plist */,
+			);
+			path = HomeePractice2Tests;
+			sourceTree = "<group>";
+		};
+		B94348991C5C1E4B00F42D75 /* HomeePractice2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				B943489A1C5C1E4B00F42D75 /* HomeePractice2UITests.m */,
+				B943489C1C5C1E4B00F42D75 /* Info.plist */,
+			);
+			path = HomeePractice2UITests;
+			sourceTree = "<group>";
+		};
+		B94348B51C5C29A600F42D75 /* Chat Room VCs */ = {
+			isa = PBXGroup;
+			children = (
+				B94348B21C5C299D00F42D75 /* ChatTableViewController.h */,
+				B94348B31C5C299D00F42D75 /* ChatTableViewController.m */,
+				B94348B91C5C34AE00F42D75 /* ShopTableViewController.h */,
+				B94348BA1C5C34AE00F42D75 /* ShopTableViewController.m */,
+				B94348BC1C5C3BA100F42D75 /* DesignViewController.h */,
+				B94348BD1C5C3BA100F42D75 /* DesignViewController.m */,
+			);
+			name = "Chat Room VCs";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B94348711C5C1E4B00F42D75 /* HomeePractice2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B943489F1C5C1E4B00F42D75 /* Build configuration list for PBXNativeTarget "HomeePractice2" */;
+			buildPhases = (
+				B943486E1C5C1E4B00F42D75 /* Sources */,
+				B943486F1C5C1E4B00F42D75 /* Frameworks */,
+				B94348701C5C1E4B00F42D75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HomeePractice2;
+			productName = HomeePractice2;
+			productReference = B94348721C5C1E4B00F42D75 /* HomeePractice2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B943488A1C5C1E4B00F42D75 /* HomeePractice2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B94348A21C5C1E4B00F42D75 /* Build configuration list for PBXNativeTarget "HomeePractice2Tests" */;
+			buildPhases = (
+				B94348871C5C1E4B00F42D75 /* Sources */,
+				B94348881C5C1E4B00F42D75 /* Frameworks */,
+				B94348891C5C1E4B00F42D75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B943488D1C5C1E4B00F42D75 /* PBXTargetDependency */,
+			);
+			name = HomeePractice2Tests;
+			productName = HomeePractice2Tests;
+			productReference = B943488B1C5C1E4B00F42D75 /* HomeePractice2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B94348951C5C1E4B00F42D75 /* HomeePractice2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B94348A51C5C1E4B00F42D75 /* Build configuration list for PBXNativeTarget "HomeePractice2UITests" */;
+			buildPhases = (
+				B94348921C5C1E4B00F42D75 /* Sources */,
+				B94348931C5C1E4B00F42D75 /* Frameworks */,
+				B94348941C5C1E4B00F42D75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B94348981C5C1E4B00F42D75 /* PBXTargetDependency */,
+			);
+			name = HomeePractice2UITests;
+			productName = HomeePractice2UITests;
+			productReference = B94348961C5C1E4B00F42D75 /* HomeePractice2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B943486A1C5C1E4B00F42D75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = solechang;
+				TargetAttributes = {
+					B94348711C5C1E4B00F42D75 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					B943488A1C5C1E4B00F42D75 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = B94348711C5C1E4B00F42D75;
+					};
+					B94348951C5C1E4B00F42D75 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = B94348711C5C1E4B00F42D75;
+					};
+				};
+			};
+			buildConfigurationList = B943486D1C5C1E4B00F42D75 /* Build configuration list for PBXProject "HomeePractice2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B94348691C5C1E4B00F42D75;
+			productRefGroup = B94348731C5C1E4B00F42D75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B94348711C5C1E4B00F42D75 /* HomeePractice2 */,
+				B943488A1C5C1E4B00F42D75 /* HomeePractice2Tests */,
+				B94348951C5C1E4B00F42D75 /* HomeePractice2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B94348701C5C1E4B00F42D75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B94348B11C5C264500F42D75 /* defaultIcon.png in Resources */,
+				B94348AF1C5C241000F42D75 /* Main.storyboard in Resources */,
+				B94348851C5C1E4B00F42D75 /* LaunchScreen.storyboard in Resources */,
+				B94348821C5C1E4B00F42D75 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B94348891C5C1E4B00F42D75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B94348941C5C1E4B00F42D75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B943486E1C5C1E4B00F42D75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B943487A1C5C1E4B00F42D75 /* AppDelegate.m in Sources */,
+				B94348B81C5C2E9200F42D75 /* ContainerViewController.m in Sources */,
+				B94348AA1C5C1FB700F42D75 /* HomeeTableViewController.m in Sources */,
+				B94348B41C5C299D00F42D75 /* ChatTableViewController.m in Sources */,
+				B94348BB1C5C34AE00F42D75 /* ShopTableViewController.m in Sources */,
+				B94348771C5C1E4B00F42D75 /* main.m in Sources */,
+				B94348BE1C5C3BA100F42D75 /* DesignViewController.m in Sources */,
+				B94348AD1C5C211400F42D75 /* RoomCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B94348871C5C1E4B00F42D75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B94348901C5C1E4B00F42D75 /* HomeePractice2Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B94348921C5C1E4B00F42D75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B943489B1C5C1E4B00F42D75 /* HomeePractice2UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B943488D1C5C1E4B00F42D75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B94348711C5C1E4B00F42D75 /* HomeePractice2 */;
+			targetProxy = B943488C1C5C1E4B00F42D75 /* PBXContainerItemProxy */;
+		};
+		B94348981C5C1E4B00F42D75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B94348711C5C1E4B00F42D75 /* HomeePractice2 */;
+			targetProxy = B94348971C5C1E4B00F42D75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B94348831C5C1E4B00F42D75 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B94348841C5C1E4B00F42D75 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B943489D1C5C1E4B00F42D75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B943489E1C5C1E4B00F42D75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B94348A01C5C1E4B00F42D75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HomeePractice2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HomeePractice2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B94348A11C5C1E4B00F42D75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HomeePractice2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HomeePractice2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B94348A31C5C1E4B00F42D75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HomeePractice2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HomeePractice2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeePractice2.app/HomeePractice2";
+			};
+			name = Debug;
+		};
+		B94348A41C5C1E4B00F42D75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HomeePractice2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HomeePractice2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeePractice2.app/HomeePractice2";
+			};
+			name = Release;
+		};
+		B94348A61C5C1E4B00F42D75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HomeePractice2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HomeePractice2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HomeePractice2;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		B94348A71C5C1E4B00F42D75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HomeePractice2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HomeePractice2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HomeePractice2;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B943486D1C5C1E4B00F42D75 /* Build configuration list for PBXProject "HomeePractice2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B943489D1C5C1E4B00F42D75 /* Debug */,
+				B943489E1C5C1E4B00F42D75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B943489F1C5C1E4B00F42D75 /* Build configuration list for PBXNativeTarget "HomeePractice2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B94348A01C5C1E4B00F42D75 /* Debug */,
+				B94348A11C5C1E4B00F42D75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B94348A21C5C1E4B00F42D75 /* Build configuration list for PBXNativeTarget "HomeePractice2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B94348A31C5C1E4B00F42D75 /* Debug */,
+				B94348A41C5C1E4B00F42D75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B94348A51C5C1E4B00F42D75 /* Build configuration list for PBXNativeTarget "HomeePractice2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B94348A61C5C1E4B00F42D75 /* Debug */,
+				B94348A71C5C1E4B00F42D75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B943486A1C5C1E4B00F42D75 /* Project object */;
+}
