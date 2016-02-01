@@ -21,9 +21,6 @@
 @property (nonatomic, retain) DesignViewController *designVC;
 @property (nonatomic, retain) ShopTableViewController *shopTVC;
 
-
-@property (nonatomic) UIScrollView *containerScrollView;
-
 @property (nonatomic) UISegmentedControl* segmentedControl;
 
 @property (nonatomic) UIScrollView *scrollView;
