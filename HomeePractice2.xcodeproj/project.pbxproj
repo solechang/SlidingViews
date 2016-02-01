@@ -118,16 +118,11 @@
 		B94348741C5C1E4B00F42D75 /* HomeePractice2 */ = {
 			isa = PBXGroup;
 			children = (
+				B991EF791C5F08A7005E7C0D /* Images */,
+				B991EF7A1C5F08BC005E7C0D /* Main Homee VC */,
 				B94348B51C5C29A600F42D75 /* Chat Room VCs */,
-				B94348B01C5C264500F42D75 /* defaultIcon.png */,
 				B94348781C5C1E4B00F42D75 /* AppDelegate.h */,
 				B94348791C5C1E4B00F42D75 /* AppDelegate.m */,
-				B94348AB1C5C211400F42D75 /* RoomCell.h */,
-				B94348AC1C5C211400F42D75 /* RoomCell.m */,
-				B94348A81C5C1FB700F42D75 /* HomeeTableViewController.h */,
-				B94348A91C5C1FB700F42D75 /* HomeeTableViewController.m */,
-				B94348B61C5C2E9200F42D75 /* ContainerViewController.h */,
-				B94348B71C5C2E9200F42D75 /* ContainerViewController.m */,
 				B94348AE1C5C241000F42D75 /* Main.storyboard */,
 				B94348811C5C1E4B00F42D75 /* Assets.xcassets */,
 				B94348831C5C1E4B00F42D75 /* LaunchScreen.storyboard */,
@@ -166,6 +161,8 @@
 		B94348B51C5C29A600F42D75 /* Chat Room VCs */ = {
 			isa = PBXGroup;
 			children = (
+				B94348B61C5C2E9200F42D75 /* ContainerViewController.h */,
+				B94348B71C5C2E9200F42D75 /* ContainerViewController.m */,
 				B94348B21C5C299D00F42D75 /* ChatTableViewController.h */,
 				B94348B31C5C299D00F42D75 /* ChatTableViewController.m */,
 				B94348B91C5C34AE00F42D75 /* ShopTableViewController.h */,
@@ -174,6 +171,25 @@
 				B94348BD1C5C3BA100F42D75 /* DesignViewController.m */,
 			);
 			name = "Chat Room VCs";
+			sourceTree = "<group>";
+		};
+		B991EF791C5F08A7005E7C0D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B94348B01C5C264500F42D75 /* defaultIcon.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		B991EF7A1C5F08BC005E7C0D /* Main Homee VC */ = {
+			isa = PBXGroup;
+			children = (
+				B94348AB1C5C211400F42D75 /* RoomCell.h */,
+				B94348AC1C5C211400F42D75 /* RoomCell.m */,
+				B94348A81C5C1FB700F42D75 /* HomeeTableViewController.h */,
+				B94348A91C5C1FB700F42D75 /* HomeeTableViewController.m */,
+			);
+			name = "Main Homee VC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,6 +546,7 @@
 				B94348A11C5C1E4B00F42D75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B94348A21C5C1E4B00F42D75 /* Build configuration list for PBXNativeTarget "HomeePractice2Tests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +555,7 @@
 				B94348A41C5C1E4B00F42D75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B94348A51C5C1E4B00F42D75 /* Build configuration list for PBXNativeTarget "HomeePractice2UITests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +564,7 @@
 				B94348A71C5C1E4B00F42D75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
