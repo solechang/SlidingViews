@@ -13,7 +13,6 @@
 @property (nonatomic, strong) UIImageView* imageView;
 @property (nonatomic) NSInteger myPosition;
 
-
 @end
 
 @implementation DesignViewController

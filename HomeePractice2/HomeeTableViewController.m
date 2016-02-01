@@ -34,42 +34,6 @@
     
 }
 
-- (void) setupViewControllers {
-    
-    
-    //standard UIScrollView is added
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-    [self.view addSubview:scrollView];
-    
-    scrollView.pagingEnabled = YES;
-    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*2, self.view.bounds.size.height); //this must be the appropriate size!
-    
-    //required to keep your view controllers around
-    controllers = [[NSMutableArray alloc] initWithCapacity:0];
-    
-    //just adding two controllers
-    ChatTableViewController *one = [[ChatTableViewController alloc] initWithPosition:0];
-    
-    [scrollView addSubview:one.view];
-    [controllers addObject:one];
-    
-    DesignViewController *two = [[DesignViewController alloc] initWithPosition:1 ];
-    [scrollView addSubview:two.view];
-    [controllers addObject:two];
-    
-    
-    //    ShopTableViewController *vcC = [[ShopTableViewController alloc] init];
-    
-    
-    //    [self.scrollView setBackgroundColor:[UIColor redColor]];
-    //    [self.view addSubview:view1];
-    //    [self.view addSubview:view2];
-    //    [self.view addSubview:view3];
-    
-    //    [self cycleFromViewController:self.currentViewController toViewController:[self.allViewControllers objectAtIndex:self.segmentedControl.selectedSegmentIndex]];
-    
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -104,14 +68,5 @@
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
