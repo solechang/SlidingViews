@@ -30,9 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    
+ 
     [self setUpView];
     [self setUpScrollView];
     [self setupViewControllers];
@@ -41,6 +39,7 @@
 }
 
 - (void) setUpView {
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view setBackgroundColor:[UIColor whiteColor]];
 
 }

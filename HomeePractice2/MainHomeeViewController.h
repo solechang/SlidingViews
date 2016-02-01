@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainHomeeViewController : UIViewController
+@interface MainHomeeViewController : UIViewController <UIScrollViewDelegate>
 
 @end

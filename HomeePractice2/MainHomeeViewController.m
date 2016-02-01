@@ -10,7 +10,7 @@
 #import "Room.h"
 #import "ContainerViewController.h"
 
-@interface MainHomeeViewController () <UIScrollViewDelegate>
+@interface MainHomeeViewController () 
 @property (nonatomic) UIScrollView *scrollView;
 
 @property (nonatomic) int currentPage;
@@ -60,6 +60,12 @@
     self.scrollView.bounces = NO;
     self.scrollView.pagingEnabled = NO;
     
+    [self setRoomViews];
+    
+}
+
+- (void) setRoomViews {
+    
     float startingXPoint = 60.0f;
     float lastSpacing = 60.0f;
     float spacingBetweenViews = 10.0f;
@@ -74,8 +80,8 @@
         Room *room = [self.roomsArray objectAtIndex:i];
         
         UIView *roomView = [[UIView alloc] initWithFrame:
-                         CGRectMake(startingXPoint + spacingBetweenViews*i + i*(widthOfView),
-                                    125, widthOfView, self.view.bounds.size.height*.5)];
+                            CGRectMake(startingXPoint + spacingBetweenViews*i + i*(widthOfView),
+                                       125, widthOfView, self.view.bounds.size.height*.5)];
         
         // Labels room description
         UILabel *labelRoomName = [[UILabel alloc] initWithFrame:
@@ -98,12 +104,12 @@
         
         roomImage.image = room.roomImage.image;
         [roomView addSubview:roomImage];
-       
+        
         [self addGestureRecogniser:roomView];
         [roomView setBackgroundColor:[UIColor blueColor]];
         
         [self.scrollView addSubview:roomView];
-
+        
     }
     
     [self.view addSubview:self.scrollView];
