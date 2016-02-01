@@ -13,9 +13,7 @@
 #import "DesignViewController.h"
 #import "ShopTableViewController.h"
 
-@interface HomeeTableViewController () {
-    NSMutableArray *controllers;
-}
+@interface HomeeTableViewController ()
 
 @end
 
@@ -29,7 +27,8 @@
 }
 
 - (void) initializeTableView {
-    
+    // because of the registered a RoomCell class (can also instantiate a nib), the cell will
+    // never return a nil
     [self.tableView registerClass:[RoomCell class] forCellReuseIdentifier:@"RoomCell"];
     
 }
@@ -47,6 +46,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     RoomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomCell" forIndexPath:indexPath];
     cell.roomName.text = @"Hi";
     cell.subtitle.text = @"Hi";
