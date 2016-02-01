@@ -14,13 +14,15 @@
     
     if (self = [super init]) {
         
-        [self.view setBackgroundColor:[UIColor redColor]];
         self.roomImage = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, 60, 60)];
         
         self.roomName = [[UILabel alloc] initWithFrame:CGRectMake(100, 10, 100, 20)];
-        
         self.subtitle = [[UILabel alloc] initWithFrame:CGRectMake(100, 30, 100, 20)];
         self.chatText = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 100, 20)];
+        
+        self.roomName.text = roomName;
+        self.subtitle.text = subTitle;
+        self.chatText.text = chatText;
         
         [self.roomImage setImage: [UIImage imageNamed: @"defaultIcon.png"]];
     }
