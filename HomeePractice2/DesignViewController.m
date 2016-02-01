@@ -21,20 +21,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(320*self.myPosition, 0, 320, 460)];
-    self.view = view;
-    
-    self.imageView =  [[UIImageView alloc] initWithFrame:CGRectMake(90, 75, 200, 200)];
-
-    self.imageView.image =  [UIImage imageNamed: @"defaultIcon.png"];
-
-    [self.view addSubview:self.imageView];
+    [self initializeViewElements];
 }
 
 
-- (void) initializeTableView {
+- (void) initializeViewElements{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*self.myPosition, 0, self.view.bounds.size.width, self.view.bounds.size.height-120)];
     
+    self.view = view;
+    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    
+    self.imageView =  [[UIImageView alloc] initWithFrame:CGRectMake(90, 75, 200, 200)];
+    
+    self.imageView.image =  [UIImage imageNamed: @"defaultIcon.png"];
+    
+    [self.view addSubview:self.imageView];
 }
 
 - (id)initWithPosition:(NSInteger)position text:(NSString*)text

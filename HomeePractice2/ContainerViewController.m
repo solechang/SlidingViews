@@ -11,7 +11,9 @@
 #import "ShopTableViewController.h"
 #import "DesignViewController.h"
 
-@interface ContainerViewController ()
+@interface ContainerViewController () {
+    NSMutableArray *controllers;
+}
 
 @property NSUInteger pageIndex;
 
@@ -30,6 +32,8 @@
 // Currently selected view controller
 @property (nonatomic, strong) UIViewController *currentViewController;
 
+@property (nonatomic) UIScrollView *scrollView;
+
 @end
 
 @implementation ContainerViewController
@@ -40,13 +44,8 @@
     
     [super viewDidLoad];
     
-    
-//    self.pageController.
-//    [self setUpScrollView];
-//    [self setUpViewElements];
-//    
     [self setupViewControllers];
-//    [self setUpSwipeGesture];
+    [self addSegmentedControl];
  
 }
 
@@ -55,37 +54,41 @@
 }
 
 - (void) setupViewControllers {
+
+//    UIView *segmentedControlView = [UI]
+    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
     //standard UIScrollView is added
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
-    [self.view addSubview:scrollView];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 120, self.view.bounds.size.width, self.view.bounds.size.height)];
     
-    scrollView.pagingEnabled = YES;
-    scrollView.contentSize = CGSizeMake(320*2, 460); //this must be the appropriate size!
+    self.scrollView.delegate = self;
+
+    self.scrollView.bounces = NO;
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*3, self.view.bounds.size.height); //this must be the appropriate size!
+
+    
+    [self.scrollView setBackgroundColor:[UIColor whiteColor]];
+    
+    [self.view addSubview:self.scrollView];
     
     //required to keep your view controllers around
-    self.allViewControllers = [[NSMutableArray alloc] initWithCapacity:0];
+    controllers = [[NSMutableArray alloc] initWithCapacity:0];
     
-    //just adding two controllers
+    //just adding 3 controllers
     ChatTableViewController *one = [[ChatTableViewController alloc] initWithPosition:0 text:@"one"];
-    
-    [scrollView addSubview:one.view];
-    [self.allViewControllers addObject:one];
+    [self.scrollView addSubview:one.view];
+    [controllers addObject:one];
     
     DesignViewController *two = [[DesignViewController alloc] initWithPosition:1 text:@"two"];
-    [scrollView addSubview:two.view];
-    [self.allViewControllers addObject:two];
+    [self.scrollView addSubview:two.view];
+    [controllers addObject:two];
     
     
-//    ShopTableViewController *vcC = [[ShopTableViewController alloc] init];
-    
-    
-//    [self.scrollView setBackgroundColor:[UIColor redColor]];
-//    [self.view addSubview:view1];
-//    [self.view addSubview:view2];
-//    [self.view addSubview:view3];
-
-//    [self cycleFromViewController:self.currentViewController toViewController:[self.allViewControllers objectAtIndex:self.segmentedControl.selectedSegmentIndex]];
+    ShopTableViewController *three = [[ShopTableViewController alloc] initWithPosition:2 text:@"three"];
+    [self.scrollView addSubview:three.view];
+    [controllers addObject:three];
     
 }
 
@@ -93,18 +96,51 @@
     
     NSArray *itemArray = [NSArray arrayWithObjects: @"Chat", @"Design", @"Shop", nil];
     self.segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
-    self.segmentedControl.frame = CGRectMake(60, 80, 250, 50);
+    self.segmentedControl.frame = CGRectMake(0, 65, self.view.bounds.size.width, 50);
     
     [self.segmentedControl addTarget:self action:@selector(MySegmentControlAction:) forControlEvents: UIControlEventValueChanged];
     self.segmentedControl.selectedSegmentIndex = 0;
     
-//    UIView *viewForSegmentedControl = [[UIView alloc] initWithFrame:CGRectMake(60, 80, 250, 50)];
-//    viewForSegmentedControl addSubview:<#(nonnull UIView *)#>
+    [self.view addSubview:self.segmentedControl];
+}
+
+- (void)MySegmentControlAction:(UISegmentedControl *)segment
+{
     
-//    [self.view addSubview:self.segmentedControl];
+    NSUInteger index = segment.selectedSegmentIndex;
+ 
+    
+    if (index == 0) {
+        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
+    } else if (index == 1) {
+        
+        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
+        
+    } else if (index == 2) {
+        
+        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
+    }
+  
 }
 
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    if (  scrollView.contentOffset.x == 0 ){
+        
+        self.segmentedControl.selectedSegmentIndex = 0;
+        
+    } else if (  scrollView.contentOffset.x == self.view.bounds.size.width*1 ){
+        
+        self.segmentedControl.selectedSegmentIndex = 1;
+        
+    } else if (  scrollView.contentOffset.x == self.view.bounds.size.width*2 ){
+        
+        self.segmentedControl.selectedSegmentIndex = 2;
+        
+    }
+    
+}
 
 
 @end

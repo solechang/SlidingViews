@@ -20,12 +20,15 @@
     [super viewDidLoad];
     
     [self initializeTableView];
+
 }
 
 - (void) initializeTableView {
+
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(320*self.myPosition, 0, 320, 460)];
-    self.view = view;
+    UITableView *tV = [[UITableView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*self.myPosition, 0, self.view.bounds.size.width, self.view.bounds.size.height-120)];
+    
+    self.tableView = tV;
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
@@ -59,6 +62,10 @@
     cell.textLabel.text = @"LOL";
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

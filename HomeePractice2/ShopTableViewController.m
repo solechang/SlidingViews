@@ -9,7 +9,7 @@
 #import "ShopTableViewController.h"
 
 @interface ShopTableViewController ()
-
+@property (nonatomic) NSInteger myPosition;
 @end
 
 @implementation ShopTableViewController
@@ -23,10 +23,23 @@
 
 - (void) initializeTableView {
     
+    UITableView *tV = [[UITableView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*self.myPosition, 0, self.view.bounds.size.width, self.view.bounds.size.height-120)];
+    
+    self.tableView = tV;
+    
+    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
 }
 
+- (id)initWithPosition:(NSInteger)position text:(NSString*)text
+{
+    if (self = [super init]) {
+        self.myPosition = position;
+        
+    }
+    return self;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
