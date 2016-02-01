@@ -10,6 +10,6 @@
 
 @interface ShopTableViewController : UITableViewController
 
-- (id)initWithPosition:(NSInteger)position text:(NSString*)text;
+- (id)initWithPosition:(NSInteger)position;
 
 @end

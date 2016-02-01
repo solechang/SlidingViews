@@ -48,12 +48,12 @@
     controllers = [[NSMutableArray alloc] initWithCapacity:0];
     
     //just adding two controllers
-    ChatTableViewController *one = [[ChatTableViewController alloc] initWithPosition:0 text:@"one"];
+    ChatTableViewController *one = [[ChatTableViewController alloc] initWithPosition:0];
     
     [scrollView addSubview:one.view];
     [controllers addObject:one];
     
-    DesignViewController *two = [[DesignViewController alloc] initWithPosition:1 text:@"two"];
+    DesignViewController *two = [[DesignViewController alloc] initWithPosition:1 ];
     [scrollView addSubview:two.view];
     [controllers addObject:two];
     

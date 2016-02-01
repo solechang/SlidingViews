@@ -32,8 +32,7 @@
     
 }
 
-- (id)initWithPosition:(NSInteger)position text:(NSString*)text
-{
+- (id)initWithPosition:(NSInteger)position {
     if (self = [super init]) {
         self.myPosition = position;
         

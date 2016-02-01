@@ -24,9 +24,8 @@
     [self initializeViewElements];
 }
 
-
 - (void) initializeViewElements{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*self.myPosition, 0, self.view.bounds.size.width, self.view.bounds.size.height-120)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*self.myPosition, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     
     self.view = view;
     
@@ -39,20 +38,12 @@
     [self.view addSubview:self.imageView];
 }
 
-- (id)initWithPosition:(NSInteger)position text:(NSString*)text
-{
+- (id)initWithPosition:(NSInteger)position {
     if (self = [super init]) {
         self.myPosition = position;
         
     }
     return self;
-}
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
