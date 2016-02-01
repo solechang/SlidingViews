@@ -13,8 +13,6 @@
 		B94348851C5C1E4B00F42D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94348831C5C1E4B00F42D75 /* LaunchScreen.storyboard */; };
 		B94348901C5C1E4B00F42D75 /* HomeePractice2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B943488F1C5C1E4B00F42D75 /* HomeePractice2Tests.m */; };
 		B943489B1C5C1E4B00F42D75 /* HomeePractice2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B943489A1C5C1E4B00F42D75 /* HomeePractice2UITests.m */; };
-		B94348AA1C5C1FB700F42D75 /* HomeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348A91C5C1FB700F42D75 /* HomeeTableViewController.m */; };
-		B94348AD1C5C211400F42D75 /* RoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348AC1C5C211400F42D75 /* RoomCell.m */; };
 		B94348AF1C5C241000F42D75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94348AE1C5C241000F42D75 /* Main.storyboard */; };
 		B94348B11C5C264500F42D75 /* defaultIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B94348B01C5C264500F42D75 /* defaultIcon.png */; };
 		B94348B41C5C299D00F42D75 /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348B31C5C299D00F42D75 /* ChatTableViewController.m */; };
@@ -56,10 +54,6 @@
 		B94348961C5C1E4B00F42D75 /* HomeePractice2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeePractice2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B943489A1C5C1E4B00F42D75 /* HomeePractice2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeePractice2UITests.m; sourceTree = "<group>"; };
 		B943489C1C5C1E4B00F42D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B94348A81C5C1FB700F42D75 /* HomeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeeTableViewController.h; sourceTree = "<group>"; };
-		B94348A91C5C1FB700F42D75 /* HomeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeeTableViewController.m; sourceTree = "<group>"; };
-		B94348AB1C5C211400F42D75 /* RoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomCell.h; sourceTree = "<group>"; };
-		B94348AC1C5C211400F42D75 /* RoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomCell.m; sourceTree = "<group>"; };
 		B94348AE1C5C241000F42D75 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B94348B01C5C264500F42D75 /* defaultIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultIcon.png; sourceTree = "<group>"; };
 		B94348B21C5C299D00F42D75 /* ChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewController.h; sourceTree = "<group>"; };
@@ -190,14 +184,10 @@
 		B991EF7A1C5F08BC005E7C0D /* Main Homee VC */ = {
 			isa = PBXGroup;
 			children = (
-				B94348AB1C5C211400F42D75 /* RoomCell.h */,
-				B94348AC1C5C211400F42D75 /* RoomCell.m */,
-				B94348A81C5C1FB700F42D75 /* HomeeTableViewController.h */,
-				B94348A91C5C1FB700F42D75 /* HomeeTableViewController.m */,
-				B9EBD0731C5FDAB000F9F0DE /* MainHomeeViewController.h */,
-				B9EBD0741C5FDAB000F9F0DE /* MainHomeeViewController.m */,
 				B9EBD0761C5FE0AB00F9F0DE /* Room.h */,
 				B9EBD0771C5FE0AB00F9F0DE /* Room.m */,
+				B9EBD0731C5FDAB000F9F0DE /* MainHomeeViewController.h */,
+				B9EBD0741C5FDAB000F9F0DE /* MainHomeeViewController.m */,
 			);
 			name = "Main Homee VC";
 			sourceTree = "<group>";
@@ -336,13 +326,11 @@
 				B9EBD0781C5FE0AB00F9F0DE /* Room.m in Sources */,
 				B943487A1C5C1E4B00F42D75 /* AppDelegate.m in Sources */,
 				B94348B81C5C2E9200F42D75 /* ContainerViewController.m in Sources */,
-				B94348AA1C5C1FB700F42D75 /* HomeeTableViewController.m in Sources */,
 				B94348B41C5C299D00F42D75 /* ChatTableViewController.m in Sources */,
 				B94348BB1C5C34AE00F42D75 /* ShopTableViewController.m in Sources */,
 				B94348771C5C1E4B00F42D75 /* main.m in Sources */,
 				B94348BE1C5C3BA100F42D75 /* DesignViewController.m in Sources */,
 				B9EBD0751C5FDAB000F9F0DE /* MainHomeeViewController.m in Sources */,
-				B94348AD1C5C211400F42D75 /* RoomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

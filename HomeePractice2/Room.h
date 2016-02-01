@@ -11,8 +11,6 @@
 
 @interface Room : NSObject
 
-@property (nonatomic) UIView *view;
-
 @property (nonatomic) UIImageView *roomImage;
 
 @property (nonatomic) UILabel *roomName;

@@ -7,7 +7,7 @@
 //
 
 #import "ChatTableViewController.h"
-#import "RoomCell.h"
+
 @interface ChatTableViewController ()
 
 @property (nonatomic) NSInteger myPosition;

@@ -124,11 +124,6 @@
     
 }
 
-
--(void)myEvent:(id)sender {
-    
-}
-
 #pragma mark - scrollView Delegate
 - (void) scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     
@@ -137,7 +132,6 @@
     self.currentPage = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     
 }
-
 
 -(void) scrollViewWillEndDragging:(UIScrollView*)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint*)targetContentOffset {
     
