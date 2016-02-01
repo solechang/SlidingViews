@@ -11,9 +11,7 @@
 #import "ShopTableViewController.h"
 #import "DesignViewController.h"
 
-@interface ContainerViewController () {
-    NSMutableArray *controllers;
-}
+@interface ContainerViewController ()
 
 @property NSUInteger pageIndex;
 
@@ -66,21 +64,15 @@
 
 - (void) setupViewControllers {
     
-    //required to keep your view controllers around
-    controllers = [[NSMutableArray alloc] initWithCapacity:0];
-    
     //just adding 3 controllers
-    ChatTableViewController *one = [[ChatTableViewController alloc] initWithPosition:0];
-    [self.scrollView addSubview:one.view];
-    [controllers addObject:one];
+    self.chatTVC = [[ChatTableViewController alloc] initWithPosition:0];
+    [self.scrollView addSubview:self.chatTVC.view];
     
-    DesignViewController *two = [[DesignViewController alloc] initWithPosition:1];
-    [self.scrollView addSubview:two.view];
-    [controllers addObject:two];
+    self.designVC = [[DesignViewController alloc] initWithPosition:1];
+    [self.scrollView addSubview:self.designVC.view];
     
-    ShopTableViewController *three = [[ShopTableViewController alloc] initWithPosition:2];
-    [self.scrollView addSubview:three.view];
-    [controllers addObject:three];
+    self.shopTVC = [[ShopTableViewController alloc] initWithPosition:2];
+    [self.scrollView addSubview:self.shopTVC.view];
 
 
 }
@@ -118,15 +110,15 @@
 #pragma mark - scrollView Delegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
-    if (  scrollView.contentOffset.x == 0 ){
+    if ( scrollView.contentOffset.x == 0 ){
         
         self.segmentedControl.selectedSegmentIndex = 0;
         
-    } else if (  scrollView.contentOffset.x == self.view.bounds.size.width*1 ){
+    } else if ( scrollView.contentOffset.x == self.view.bounds.size.width*1 ){
         
         self.segmentedControl.selectedSegmentIndex = 1;
         
-    } else if (  scrollView.contentOffset.x == self.view.bounds.size.width*2 ){
+    } else if ( scrollView.contentOffset.x == self.view.bounds.size.width*2 ){
         
         self.segmentedControl.selectedSegmentIndex = 2;
         

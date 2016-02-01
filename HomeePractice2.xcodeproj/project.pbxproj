@@ -22,6 +22,7 @@
 		B94348BB1C5C34AE00F42D75 /* ShopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348BA1C5C34AE00F42D75 /* ShopTableViewController.m */; };
 		B94348BE1C5C3BA100F42D75 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348BD1C5C3BA100F42D75 /* DesignViewController.m */; };
 		B9EBD0751C5FDAB000F9F0DE /* MainHomeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EBD0741C5FDAB000F9F0DE /* MainHomeeViewController.m */; };
+		B9EBD0781C5FE0AB00F9F0DE /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EBD0771C5FE0AB00F9F0DE /* Room.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		B94348BD1C5C3BA100F42D75 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		B9EBD0731C5FDAB000F9F0DE /* MainHomeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainHomeeViewController.h; sourceTree = "<group>"; };
 		B9EBD0741C5FDAB000F9F0DE /* MainHomeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainHomeeViewController.m; sourceTree = "<group>"; };
+		B9EBD0761C5FE0AB00F9F0DE /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+		B9EBD0771C5FE0AB00F9F0DE /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,8 @@
 				B94348A91C5C1FB700F42D75 /* HomeeTableViewController.m */,
 				B9EBD0731C5FDAB000F9F0DE /* MainHomeeViewController.h */,
 				B9EBD0741C5FDAB000F9F0DE /* MainHomeeViewController.m */,
+				B9EBD0761C5FE0AB00F9F0DE /* Room.h */,
+				B9EBD0771C5FE0AB00F9F0DE /* Room.m */,
 			);
 			name = "Main Homee VC";
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9EBD0781C5FE0AB00F9F0DE /* Room.m in Sources */,
 				B943487A1C5C1E4B00F42D75 /* AppDelegate.m in Sources */,
 				B94348B81C5C2E9200F42D75 /* ContainerViewController.m in Sources */,
 				B94348AA1C5C1FB700F42D75 /* HomeeTableViewController.m in Sources */,

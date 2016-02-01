@@ -8,10 +8,11 @@
 
 #import "AppDelegate.h"
 #import "HomeeTableViewController.h"
+#import "MainHomeeViewController.h"
 
 @interface AppDelegate ()
 
-@property (nonatomic, strong) HomeeTableViewController *homeeTVC;
+@property (nonatomic, strong) MainHomeeViewController *homeeTVC;
 
 @end
 
@@ -23,7 +24,7 @@
  
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.homeeTVC = [[HomeeTableViewController alloc]init];
+    self.homeeTVC = [[MainHomeeViewController alloc] init];
     UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:self.homeeTVC];
 
     self.window.rootViewController = navVC;

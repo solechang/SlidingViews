@@ -21,6 +21,7 @@
         self.subtitle = [[UILabel alloc] initWithFrame:CGRectMake(100, 30, 100, 20)];
         self.chatText = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 100, 20)];
         
+        
         [self.contentView addSubview:self.roomImage];
         [self.contentView addSubview:self.roomName];
         [self.contentView addSubview:self.subtitle];
