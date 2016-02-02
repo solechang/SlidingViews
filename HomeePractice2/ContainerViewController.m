@@ -110,19 +110,22 @@
     [self.view addGestureRecognizer:tapRecognizer];
     
     self.slideButton = [[UIView alloc]  initWithFrame:CGRectMake(0, 10, 20, 20)];
-    self.slideButton.tag = 2;
+    self.slideButton.tag = 0;
     [self.slideButton setBackgroundColor:[UIColor redColor]];
     
-    self.chatLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, 50, 20)];
+    self.chatLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, 50, 40)];
     self.chatLabel.text = @"Chat";
     self.chatLabel.textColor = [UIColor colorWithRed: 180.0/255.0 green: 238.0/255.0 blue:180.0/255.0 alpha: 1.0];
+    self.chatLabel.tag = 1;
+
     
-    self.designLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/2 - 12, 30, 100, 20)];
+    self.designLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/2 - 12, 15, 100, 40)];
     self.designLabel.text = @"Design";
+    self.designLabel.tag = 2;
     
-    
-    self.shopLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.bounds.size.width- 40, 30, 100, 20)];
+    self.shopLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.bounds.size.width- 40, 15, 100, 40)];
     self.shopLabel.text = @"Shop";
+    self.shopLabel.tag = 3;
 
     [self.sliderView addSubview:self.chatLabel];
     [self.sliderView addSubview:self.designLabel];
@@ -142,7 +145,7 @@
     
     UITouch *touch = [[event allTouches] anyObject];
     
-    if ([[touch view] tag] == 2) {
+    if ([[touch view] tag] == 0) {
 
         CGPoint location = [touch locationInView:self.view];
         CGRect frame = self.slideButton.frame;
@@ -159,20 +162,20 @@
 -(void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     UITouch *touch = [[event allTouches] anyObject];
-    
-    if ([[touch view] tag] == 2) {
-        CGPoint location = [touch locationInView:self.view];
-        CGRect frame = self.slideButton.frame;
+    CGPoint location = [touch locationInView:self.view];
+    CGRect frame = self.slideButton.frame;
+    NSLog(@"1.) %@", [[touch view] tag]);
+    if ([[touch view] tag] == 0) {
+  
     
         float sliderValue = location.x / self.view.bounds.size.width;
         if (sliderValue > .25 && sliderValue < .75) {
             
             // Design
-            
             frame.origin.x = self.view.bounds.size.width/2.0f;
             self.slideButton.frame = frame;
             [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
-            
+            [self changeTextColor:1];
         } else if (sliderValue > .50) {
             
             // Shop
@@ -180,20 +183,65 @@
             frame.origin.x = self.view.bounds.size.width - 20;
 
             [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
-            
+            [self changeTextColor:2];
         } else if (sliderValue < .25) {
             // Chat
             self.slideButton.frame = frame;
             frame.origin.x = 0.0f;
             [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
-            
+            [self changeTextColor:0];
         }
           self.slideButton.frame = frame;
+    }else if  ([[touch view] tag] == 1) {
+        NSLog(@"1.)"     );
+        // Chat
+        self.slideButton.frame = frame;
+        frame.origin.x = 0.0f;
+        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
+        [self changeTextColor:0];
+
+        
+    } else if  ([[touch view] tag] == 2) {
+               NSLog(@"2.)"     );
+        // Design
+        frame.origin.x = self.view.bounds.size.width/2.0f;
+        self.slideButton.frame = frame;
+        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
+        [self changeTextColor:1];
+        
+    } else if  ([[touch view] tag] == 3) {
+        // Shop
+               NSLog(@"3.)"     );
+        self.slideButton.frame = frame;
+        frame.origin.x = self.view.bounds.size.width - 20;
+        
+        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
+        [self changeTextColor:2];
 
     }
+    
+    
+    
 }
 
-- (void) changeTextColor {
+- (void) changeTextColor :(int) label{
+    if (label == 0) {
+        self.chatLabel.textColor = [UIColor colorWithRed: 180.0/255.0 green: 238.0/255.0 blue:180.0/255.0 alpha: 1.0];
+        self.shopLabel.textColor= [UIColor blackColor];
+        self.designLabel.textColor = [UIColor blackColor];
+    } else if (label == 1) {
+        self.chatLabel.textColor = [UIColor blackColor];
+        self.shopLabel.textColor= [UIColor blackColor];
+        self.designLabel.textColor = [UIColor colorWithRed: 180.0/255.0 green: 238.0/255.0 blue:180.0/255.0 alpha: 1.0];
+        
+    } else {
+        
+        self.chatLabel.textColor = [UIColor blackColor];
+        self.shopLabel.textColor= [UIColor colorWithRed: 180.0/255.0 green: 238.0/255.0 blue:180.0/255.0 alpha: 1.0];
+        self.designLabel.textColor =  [UIColor blackColor];
+
+        
+    }
     
 }
 
