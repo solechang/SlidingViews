@@ -11,7 +11,7 @@
 #import "ShopTableViewController.h"
 #import "DesignViewController.h"
 
-@interface ContainerViewController ()
+@interface ContainerViewController () <UIGestureRecognizerDelegate>
 
 @property NSUInteger pageIndex;
 
@@ -23,8 +23,15 @@
 
 @property (nonatomic) UISlider *slider;
 
+@property (nonatomic) UIView *sliderView;
+
 @property (nonatomic) UIScrollView *scrollView;
 
+@property (nonatomic) UIView *slideButton;
+
+@property (nonatomic) UILabel *chatLabel;
+@property (nonatomic) UILabel *designLabel;
+@property (nonatomic) UILabel *shopLabel;
 @end
 
 @implementation ContainerViewController
@@ -37,7 +44,8 @@
     [self setUpScrollView];
     [self setupViewControllers];
 //    [self addSegmentedControl];
-    [self addSlider];
+//    [self addSlider];
+    [self createCustomSliderView];
  
 }
 
@@ -91,68 +99,148 @@
     [self.view addSubview:self.segmentedControl];
 }
 
-- (void) addSlider {
-    
-    self.slider = [[UISlider alloc] initWithFrame:CGRectMake(0, 65, self.view.bounds.size.width, 50)];
 
-    [self.slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
 
-    [self.slider addTarget:self action:@selector(sliderStops:) forControlEvents:(UIControlEventTouchUpInside | UIControlEventTouchUpOutside)];
+- (void) createCustomSliderView {
     
+    self.sliderView = [[UIView alloc] initWithFrame:CGRectMake(0, 65, self.view.bounds.size.width, 50)];
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
+    [tapRecognizer setNumberOfTapsRequired:1];
+    [tapRecognizer setDelegate:self];
+    [self.view addGestureRecognizer:tapRecognizer];
+    
+    self.slideButton = [[UIView alloc]  initWithFrame:CGRectMake(0, 10, 20, 20)];
+    self.slideButton.tag = 2;
+    [self.slideButton setBackgroundColor:[UIColor redColor]];
+    
+    self.chatLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, 50, 20)];
+    self.chatLabel.text = @"Chat";
+    self.chatLabel.textColor = [UIColor colorWithRed: 180.0/255.0 green: 238.0/255.0 blue:180.0/255.0 alpha: 1.0];
+    
+    self.designLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/2 - 12, 30, 100, 20)];
+    self.designLabel.text = @"Design";
+    
+    
+    self.shopLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.bounds.size.width- 40, 30, 100, 20)];
+    self.shopLabel.text = @"Shop";
 
-    self.slider.continuous = YES;
-    self.slider.maximumValue = 100;
-    self.slider.minimumValue = 0;
-    self.slider.value = 0;
-    [self.view addSubview:self.slider];
+    [self.sliderView addSubview:self.chatLabel];
+    [self.sliderView addSubview:self.designLabel];
+    [self.sliderView addSubview:self.shopLabel];
+    [self.sliderView addSubview: self.slideButton];
     
-//    UIImageView
+    [self.view addSubview:self.sliderView];
+
 }
 
--(void)sliderStops:(id)sender
-{
-    UISlider *slider = (UISlider*)sender;
+- (void) tapped:(id)sender {
     
-    if (slider.value > 25 && slider.value < 75) {
-        
-        [self.slider setValue:50];
-        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
-        
-    } else if (slider.value > 50) {
+}
+
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
-        [self.slider setValue:100 animated:YES];
-        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    if ([[touch view] tag] == 2) {
+
+        CGPoint location = [touch locationInView:self.view];
+        CGRect frame = self.slideButton.frame;
+        frame.origin.x = location.x;
+        self.slideButton.frame = frame;
         
-    } else if (slider.value < 25) {
-        [self.slider setValue:0 animated:YES];
-        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
+        [self.scrollView setContentOffset:CGPointMake(2*location.x, 1)];
+
+
 
     }
 }
 
--(void)sliderAction:(id)sender {
+-(void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2*self.slider.value/100, 1)];
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    if ([[touch view] tag] == 2) {
+        CGPoint location = [touch locationInView:self.view];
+        CGRect frame = self.slideButton.frame;
+    
+        float sliderValue = location.x / self.view.bounds.size.width;
+        if (sliderValue > .25 && sliderValue < .75) {
+            
+            // Design
+            
+            frame.origin.x = self.view.bounds.size.width/2.0f;
+            self.slideButton.frame = frame;
+            [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
+            
+        } else if (sliderValue > .50) {
+            
+            // Shop
+            self.slideButton.frame = frame;
+            frame.origin.x = self.view.bounds.size.width - 20;
 
+            [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
+            
+        } else if (sliderValue < .25) {
+            // Chat
+            self.slideButton.frame = frame;
+            frame.origin.x = 0.0f;
+            [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
+            
+        }
+          self.slideButton.frame = frame;
+
+    }
 }
+
+- (void) changeTextColor {
+    
+}
+
+//-(void)sliderStops:(id)sender
+//{
+//    UISlider *slider = (UISlider*)sender;
+//    
+//    if (slider.value > 25 && slider.value < 75) {
+//        
+//        [self.slider setValue:50];
+//        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
+//        
+//    } else if (slider.value > 50) {
+//    
+//        [self.slider setValue:100 animated:YES];
+//        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
+//        
+//    } else if (slider.value < 25) {
+//        [self.slider setValue:0 animated:YES];
+//        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
+//
+//    }
+//}
+//
+//-(void)sliderAction:(id)sender {
+//    
+//    [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2*self.slider.value/100, 1)];
+//
+//}
 
 #pragma mark - scrollView Delegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
-    if ( scrollView.contentOffset.x == 0 ){
-        
-        self.segmentedControl.selectedSegmentIndex = 0;
-        [self.slider setValue:0];
-    } else if ( scrollView.contentOffset.x == self.view.bounds.size.width*1 ){
-        
-        [self.slider setValue:50];
-        self.segmentedControl.selectedSegmentIndex = 1;
-        
-    } else if ( scrollView.contentOffset.x == self.view.bounds.size.width*2 ){
-        [self.slider setValue:100];
-        self.segmentedControl.selectedSegmentIndex = 2;
-        
-    }
+//    if ( scrollView.contentOffset.x == 0 ){
+//        
+//        self.segmentedControl.selectedSegmentIndex = 0;
+//        [self.slider setValue:0];
+//    } else if ( scrollView.contentOffset.x == self.view.bounds.size.width*1 ){
+//        
+//        [self.slider setValue:50];
+//        self.segmentedControl.selectedSegmentIndex = 1;
+//        
+//    } else if ( scrollView.contentOffset.x == self.view.bounds.size.width*2 ){
+//        [self.slider setValue:100];
+//        self.segmentedControl.selectedSegmentIndex = 2;
+//        
+//    }
     
 }
 

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "MainHomeeViewController.h"
+#import "NewViewController.h"
 
 @interface AppDelegate ()
 
