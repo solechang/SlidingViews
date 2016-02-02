@@ -11,7 +11,9 @@
 #import "ShopTableViewController.h"
 #import "DesignViewController.h"
 
-@interface ContainerViewController ()
+@interface ContainerViewController () {
+      float _sliderValue;
+}
 
 @property NSUInteger pageIndex;
 
@@ -20,6 +22,8 @@
 @property (nonatomic, retain) ShopTableViewController *shopTVC;
 
 @property (nonatomic) UISegmentedControl* segmentedControl;
+
+@property (nonatomic) UISlider *slider;
 
 @property (nonatomic) UIScrollView *scrollView;
 
@@ -34,7 +38,8 @@
     [self setUpView];
     [self setUpScrollView];
     [self setupViewControllers];
-    [self addSegmentedControl];
+//    [self addSegmentedControl];
+    [self addSlider];
  
 }
 
@@ -83,28 +88,57 @@
     self.segmentedControl.frame = CGRectMake(0, 65, self.view.bounds.size.width, 50);
     
     [self.segmentedControl addTarget:self action:@selector(MySegmentControlAction:) forControlEvents: UIControlEventValueChanged];
+    [self.segmentedControl addTarget:self action:@selector(segmentedValueChange:) forControlEvents: UIControlEventTouchDragInside];
     self.segmentedControl.selectedSegmentIndex = 0;
     
     [self.view addSubview:self.segmentedControl];
 }
 
-- (void)MySegmentControlAction:(UISegmentedControl *)segment
-{
+- (void) addSlider {
     
-    NSUInteger index = segment.selectedSegmentIndex;
- 
-    if (index == 0) {
-        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
-    } else if (index == 1) {
+    _sliderValue = 25;
+    self.slider = [[UISlider alloc] initWithFrame:CGRectMake(0, 65, self.view.bounds.size.width, 50)];
+
+    [self.slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+
+    [self.slider addTarget:self action:@selector(sliderStops:) forControlEvents:(UIControlEventTouchUpInside | UIControlEventTouchUpOutside)];
+    
+
+    self.slider.continuous = YES;
+    self.slider.maximumValue = 100;
+    self.slider.minimumValue = 0;
+    self.slider.value = 0;
+    [self.view addSubview:self.slider];
+}
+
+-(void)sliderStops:(id)sender
+{
+    UISlider *slider = (UISlider*)sender;
+    
+    if (slider.value > 33 && slider.value < 66) {
         
+        [self.slider setValue:50];
         [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
         
-    } else if (index == 2) {
+    } else if (slider.value > 66) {
         
+//        if (slider.value > .)
+        [self.slider setValue:100 animated:YES];
         [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
+        
+    } else if (slider.value < 33) {
+        [self.slider setValue:0 animated:YES];
+        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
+
     }
-  
 }
+
+-(void)sliderAction:(id)sender {
+    
+    [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2*self.slider.value/100, 1)];
+
+}
+
 
 #pragma mark - scrollView Delegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -112,13 +146,14 @@
     if ( scrollView.contentOffset.x == 0 ){
         
         self.segmentedControl.selectedSegmentIndex = 0;
-        
+        [self.slider setValue:25];
     } else if ( scrollView.contentOffset.x == self.view.bounds.size.width*1 ){
         
+        [self.slider setValue:50];
         self.segmentedControl.selectedSegmentIndex = 1;
         
     } else if ( scrollView.contentOffset.x == self.view.bounds.size.width*2 ){
-        
+        [self.slider setValue:75];
         self.segmentedControl.selectedSegmentIndex = 2;
         
     }

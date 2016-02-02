@@ -38,7 +38,7 @@
 - (void) initializeRoomsArray {
     self.roomsArray = [[NSMutableArray alloc] init];
     
-    Room *room = [[Room alloc] initWithRoomDescription:@"HI" :@"HELLO" :@"Lets get work done" ];
+    Room *room = [[Room alloc] initWithRoomDescription:@"2Pac" :@"Thug Life" :@"Ambitionz az a Ridah" ];
     
     for (int i = 0; i < 5; i++) {
         
@@ -59,6 +59,7 @@
     self.scrollView.delegate = self;
     self.scrollView.bounces = NO;
     self.scrollView.pagingEnabled = NO;
+    self.scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
     
     [self setRoomViews];
     
@@ -69,10 +70,11 @@
     float startingXPoint = 60.0f;
     float lastSpacing = 60.0f;
     float spacingBetweenViews = 10.0f;
-    float widthOfView = (self.view.bounds.size.width/1.50f);
+    float widthOfRoomView = (self.view.bounds.size.width/1.50f);
     
     
-    self.scrollView.contentSize = CGSizeMake(startingXPoint + self.roomsArray.count*spacingBetweenViews + self.roomsArray.count * (widthOfView) + lastSpacing,
+    self.scrollView.contentSize = CGSizeMake(startingXPoint + self.roomsArray.count*spacingBetweenViews +
+                                             self.roomsArray.count * (widthOfRoomView) + lastSpacing,
                                              self.scrollView.bounds.size.height); //this must be the appropriate size!
     
     for (int i = 0; i < self.roomsArray.count; i++) {
@@ -80,8 +82,8 @@
         Room *room = [self.roomsArray objectAtIndex:i];
         
         UIView *roomView = [[UIView alloc] initWithFrame:
-                            CGRectMake(startingXPoint + spacingBetweenViews*i + i*(widthOfView),
-                                       125, widthOfView, self.view.bounds.size.height*.5)];
+                            CGRectMake(startingXPoint + spacingBetweenViews*i + i*(widthOfRoomView),
+                                       125, widthOfRoomView, self.view.bounds.size.height*.5)];
         
         // Labels room description
         UILabel *labelRoomName = [[UILabel alloc] initWithFrame:
@@ -89,7 +91,7 @@
         UILabel *labelsubTitle = [[UILabel alloc] initWithFrame:
                                   CGRectMake(20, 240, 150, 20)];
         UILabel *labelchatText = [[UILabel alloc] initWithFrame:
-                                  CGRectMake(20, 260, 150, 20)];
+                                  CGRectMake(20, 260, 180, 20)];
         
         labelRoomName.text = room.roomName.text;
         labelsubTitle.text = room.subtitle.text;
@@ -100,7 +102,7 @@
         [roomView addSubview:labelchatText];
         
         // Room Image
-        UIImageView *roomImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, widthOfView, 200)];
+        UIImageView *roomImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, widthOfRoomView, 200)];
         
         roomImage.image = room.roomImage.image;
         [roomView addSubview:roomImage];
@@ -148,17 +150,22 @@
     if (velocity.x == 0) // slow dragging not lifting finger
     {
         newPage = floor((targetContentOffset->x - pageWidth / 2) / pageWidth) + 1;
-    }
-    else
-    {
+
+    } else {
+        
+        // The velocity calculates if the user is swiping left or right
+        // Positive number = swiping right
+        // Negative number = swiping left
+
         newPage = velocity.x > 0 ? _currentPage + 1 : _currentPage - 1;
         
         if (newPage < 0)
-            newPage = 0;
+            newPage = 0; // For first view
         if (newPage > self.scrollView.contentSize.width / pageWidth)
-            newPage = ceil(self.scrollView.contentSize.width / pageWidth) - 1.0;
+            newPage = ceil(self.scrollView.contentSize.width / pageWidth) - 1.0; // For last View
     }
-    
+
+    // After velocity calculation, the targetContentOffset is where the scrollView should land
     *targetContentOffset = CGPointMake(newPage * pageWidth, targetContentOffset->y);
 
 }
