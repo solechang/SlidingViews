@@ -107,7 +107,6 @@
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
     [tapRecognizer setNumberOfTapsRequired:1];
     [tapRecognizer setDelegate:self];
-    [self.view addGestureRecognizer:tapRecognizer];
     
     self.slideButton = [[UIView alloc]  initWithFrame:CGRectMake(0, 10, 20, 20)];
     self.slideButton.tag = 0;
@@ -116,38 +115,46 @@
     self.chatLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, 50, 40)];
     self.chatLabel.text = @"Chat";
     self.chatLabel.textColor = [UIColor colorWithRed: 180.0/255.0 green: 238.0/255.0 blue:180.0/255.0 alpha: 1.0];
-    self.chatLabel.tag = 1;
+    [self.chatLabel addGestureRecognizer:tapRecognizer];
+    self.chatLabel.userInteractionEnabled = YES;
 
     
     self.designLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/2 - 12, 15, 100, 40)];
     self.designLabel.text = @"Design";
-    self.designLabel.tag = 2;
+    [self.designLabel addGestureRecognizer:tapRecognizer];
+    self.designLabel.userInteractionEnabled = YES;
+
     
     self.shopLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.bounds.size.width- 40, 15, 100, 40)];
     self.shopLabel.text = @"Shop";
-    self.shopLabel.tag = 3;
+    [self.shopLabel addGestureRecognizer:tapRecognizer];
+    self.shopLabel.userInteractionEnabled = YES;
 
     [self.sliderView addSubview:self.chatLabel];
     [self.sliderView addSubview:self.designLabel];
     [self.sliderView addSubview:self.shopLabel];
     [self.sliderView addSubview: self.slideButton];
     
+    [self.view addGestureRecognizer:tapRecognizer];
+    
     [self.view addSubview:self.sliderView];
 
 }
 
 - (void) tapped:(id)sender {
-    
+    NSLog(@"1.)'");
 }
 
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [[event allTouches] anyObject];
+    CGPoint location = [touch locationInView:self.view];
+  
     
-    if ([[touch view] tag] == 0) {
+    if ([touch view] == self.slideButton) {
 
-        CGPoint location = [touch locationInView:self.view];
+   
         CGRect frame = self.slideButton.frame;
         frame.origin.x = location.x;
         self.slideButton.frame = frame;
@@ -164,10 +171,8 @@
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint location = [touch locationInView:self.view];
     CGRect frame = self.slideButton.frame;
-    NSLog(@"1.) %@", [[touch view] tag]);
-    if ([[touch view] tag] == 0) {
-  
-    
+
+    if ([touch view] == self.slideButton) {
         float sliderValue = location.x / self.view.bounds.size.width;
         if (sliderValue > .25 && sliderValue < .75) {
             
@@ -192,7 +197,7 @@
             [self changeTextColor:0];
         }
           self.slideButton.frame = frame;
-    }else if  ([[touch view] tag] == 1) {
+    } else if  ([[touch view] tag] == 1) {
         NSLog(@"1.)"     );
         // Chat
         self.slideButton.frame = frame;
@@ -201,24 +206,26 @@
         [self changeTextColor:0];
 
         
-    } else if  ([[touch view] tag] == 2) {
-               NSLog(@"2.)"     );
-        // Design
-        frame.origin.x = self.view.bounds.size.width/2.0f;
-        self.slideButton.frame = frame;
-        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
-        [self changeTextColor:1];
-        
-    } else if  ([[touch view] tag] == 3) {
-        // Shop
-               NSLog(@"3.)"     );
-        self.slideButton.frame = frame;
-        frame.origin.x = self.view.bounds.size.width - 20;
-        
-        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
-        [self changeTextColor:2];
-
     }
+    
+//    else if  ([[touch view] tag] == 2) {
+//               NSLog(@"2.)"     );
+//        // Design
+//        frame.origin.x = self.view.bounds.size.width/2.0f;
+//        self.slideButton.frame = frame;
+//        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
+//        [self changeTextColor:1];
+//        
+//    } else if  ([[touch view] tag] == 3) {
+//        // Shop
+//               NSLog(@"3.)"     );
+//        self.slideButton.frame = frame;
+//        frame.origin.x = self.view.bounds.size.width - 20;
+//        
+//        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
+//        [self changeTextColor:2];
+//
+//    }
     
     
     
