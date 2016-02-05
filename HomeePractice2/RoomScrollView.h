@@ -1,13 +1,13 @@
 //
-//  NewViewController.h
+//  RoomScrollView.h
 //  HomeePractice2
 //
-//  Created by Jake Choi on 2/1/16.
+//  Created by Jake Choi on 2/5/16.
 //  Copyright © 2016 solechang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface NewViewController : UIViewController
+@interface RoomScrollView : UIScrollView
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoomScrollView.h"
 
-@interface ContainerViewController : UIViewController <UIScrollViewDelegate>
+@interface ContainerViewController : UIViewController < UIScrollViewDelegate>
 
 
 @end

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B91F8D9D1C6062C900D012B5 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B91F8D9C1C6062C900D012B5 /* NewViewController.m */; };
+		B90563D11C6535D800EDD430 /* RoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90563D01C6535D800EDD430 /* RoomScrollView.m */; };
 		B94348771C5C1E4B00F42D75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348761C5C1E4B00F42D75 /* main.m */; };
 		B943487A1C5C1E4B00F42D75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348791C5C1E4B00F42D75 /* AppDelegate.m */; };
 		B94348821C5C1E4B00F42D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94348811C5C1E4B00F42D75 /* Assets.xcassets */; };
@@ -42,8 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B91F8D9B1C6062C900D012B5 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
-		B91F8D9C1C6062C900D012B5 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
+		B90563CF1C6535D800EDD430 /* RoomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomScrollView.h; sourceTree = "<group>"; };
+		B90563D01C6535D800EDD430 /* RoomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomScrollView.m; sourceTree = "<group>"; };
 		B94348721C5C1E4B00F42D75 /* HomeePractice2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeePractice2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94348761C5C1E4B00F42D75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B94348781C5C1E4B00F42D75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -166,14 +166,14 @@
 			children = (
 				B94348B61C5C2E9200F42D75 /* ContainerViewController.h */,
 				B94348B71C5C2E9200F42D75 /* ContainerViewController.m */,
-				B91F8D9B1C6062C900D012B5 /* NewViewController.h */,
-				B91F8D9C1C6062C900D012B5 /* NewViewController.m */,
 				B94348B21C5C299D00F42D75 /* ChatTableViewController.h */,
 				B94348B31C5C299D00F42D75 /* ChatTableViewController.m */,
 				B94348B91C5C34AE00F42D75 /* ShopTableViewController.h */,
 				B94348BA1C5C34AE00F42D75 /* ShopTableViewController.m */,
 				B94348BC1C5C3BA100F42D75 /* DesignViewController.h */,
 				B94348BD1C5C3BA100F42D75 /* DesignViewController.m */,
+				B90563CF1C6535D800EDD430 /* RoomScrollView.h */,
+				B90563D01C6535D800EDD430 /* RoomScrollView.m */,
 			);
 			name = "Chat Room VCs";
 			sourceTree = "<group>";
@@ -334,8 +334,8 @@
 				B94348B41C5C299D00F42D75 /* ChatTableViewController.m in Sources */,
 				B94348BB1C5C34AE00F42D75 /* ShopTableViewController.m in Sources */,
 				B94348771C5C1E4B00F42D75 /* main.m in Sources */,
-				B91F8D9D1C6062C900D012B5 /* NewViewController.m in Sources */,
 				B94348BE1C5C3BA100F42D75 /* DesignViewController.m in Sources */,
+				B90563D11C6535D800EDD430 /* RoomScrollView.m in Sources */,
 				B9EBD0751C5FDAB000F9F0DE /* MainHomeeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

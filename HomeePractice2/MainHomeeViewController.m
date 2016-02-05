@@ -119,12 +119,12 @@
 }
 -(void)addGestureRecogniser:(UIView *)touchView{
     
-    UITapGestureRecognizer *singleTap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changecolor:)];
+    UITapGestureRecognizer *singleTap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showRoom:)];
     [touchView addGestureRecognizer:singleTap];
     
 
 }
--(void)changecolor: (UIView *) touchView{
+-(void)showRoom: (UIView *) touchView{
     
     // Check which view is clicked so that we can approriately display the correct content
     ContainerViewController *containerTVC = [[ContainerViewController alloc] init];
