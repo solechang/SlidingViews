@@ -11,7 +11,7 @@
 #import "ShopTableViewController.h"
 #import "DesignViewController.h"
 
-@interface ContainerViewController () 
+@interface ContainerViewController ()
 
 @property (nonatomic, retain) ChatTableViewController *chatTVC;
 @property (nonatomic, retain) DesignViewController *designVC;
@@ -248,7 +248,6 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
    
     CGRect frame = self.slideButton.frame;
-//    frame.origin.x = scrollView.contentOffset.x/3.0f + 50.0f;
     
     if (scrollView.contentOffset.x < 750.0/3.0) {
 //             NSLog(@"0.) %f", scrollView.contentOffset.x);
@@ -260,9 +259,10 @@
         frame.origin.x = self.view.bounds.size.width/2.0f;
         [self changeTextColor:1];
     } else if (scrollView.contentOffset.x > 750.0*(2.0/3.0)) {
-//             NSLog(@"3.) %f", scrollView.contentOffset.x);
+        
         
         frame.origin.x = self.view.bounds.size.width - 20;
+        NSLog(@"3.) %f",  frame.origin.x);
         [self changeTextColor:2];
     }
     self.slideButton.frame = frame;
