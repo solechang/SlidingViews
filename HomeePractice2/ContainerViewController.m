@@ -136,7 +136,6 @@
     if (gesture.view == self.chatLabel) {
 
         frame.origin.x = 0.0f;
-        self.slideButton.frame = frame;
         
         [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
         [self changeTextColor:0];
@@ -144,15 +143,13 @@
     } else if (gesture.view == self.designLabel) {
     
         frame.origin.x = self.view.bounds.size.width/2.0f;
-        self.slideButton.frame = frame;
         [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
         [self changeTextColor:1];
     } else if (gesture.view == self.shopLabel) {
     
         frame.origin.x = self.view.bounds.size.width - 20;
         
-        NSLog(@"3.) %f", frame.origin.x);
-        self.slideButton.frame = frame;
+
         
         [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
         [self changeTextColor:2];
@@ -165,9 +162,6 @@
 
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint location = [touch locationInView:self.view];
-
-    
-//    [super touchesMoved:touches withEvent:event];
 
 
     if ([touch view] == self.slideButton) {
@@ -191,7 +185,6 @@
     if ([touch view] == self.slideButton) {
         float sliderValue = location.x / self.view.bounds.size.width;
         if (sliderValue > .25 && sliderValue < .75) {
-            
             // Design
             frame.origin.x = self.view.bounds.size.width/2.0f;
             [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
@@ -241,7 +234,11 @@
 {
     CGRect frame = self.slideButton.frame;
     frame.origin.x = scrollView.contentOffset.x/2.0f;
-    self.slideButton.frame = frame;
+    
+    if (frame.origin.x < 355.0) {
+        self.slideButton.frame = frame;
+    }
+
 
 }
 
@@ -250,19 +247,14 @@
     CGRect frame = self.slideButton.frame;
     
     if (scrollView.contentOffset.x < 750.0/3.0) {
-//             NSLog(@"0.) %f", scrollView.contentOffset.x);
         frame.origin.x = 0.0f;
         [self changeTextColor:0];
 
     } else if ((scrollView.contentOffset.x > 750.0/3.0) && scrollView.contentOffset.x < 750.0*(2.0/3.0)) {
-//             NSLog(@"2.) %f", scrollView.contentOffset.x);
         frame.origin.x = self.view.bounds.size.width/2.0f;
         [self changeTextColor:1];
     } else if (scrollView.contentOffset.x > 750.0*(2.0/3.0)) {
-        
-        
         frame.origin.x = self.view.bounds.size.width - 20;
-        NSLog(@"3.) %f",  frame.origin.x);
         [self changeTextColor:2];
     }
     self.slideButton.frame = frame;
