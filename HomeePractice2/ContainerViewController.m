@@ -111,7 +111,7 @@
     self.slideButton.tag = 0;
     [self.slideButton setBackgroundColor:[UIColor redColor]];
     
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedChat:)];
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
     [tapRecognizer setNumberOfTapsRequired:1];
     
     self.chatLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, 50, 40)];
@@ -120,7 +120,7 @@
     [self.chatLabel addGestureRecognizer:tapRecognizer];
     self.chatLabel.userInteractionEnabled = YES;
 
-    UITapGestureRecognizer *tapDesignRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedDesign:)];
+    UITapGestureRecognizer *tapDesignRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
     [tapRecognizer setNumberOfTapsRequired:1];
     
     self.designLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/2 - 12, 15, 100, 40)];
@@ -129,7 +129,7 @@
     self.designLabel.userInteractionEnabled = YES;
 
     
-    UITapGestureRecognizer *tapShopRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedShop:)];
+    UITapGestureRecognizer *tapShopRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
     [tapRecognizer setNumberOfTapsRequired:1];
     
     self.shopLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.bounds.size.width- 40, 15, 100, 40)];
@@ -147,34 +147,38 @@
 
 }
 
-- (void) tappedChat:(id)sender {
-     CGRect frame =self.slideButton.frame;
-    frame.origin.x = 0.0f;
-    self.slideButton.frame = frame;
-   
-    [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
-    [self changeTextColor:0];
-
-   
-}
-- (void) tappedDesign:(id)sender {
-
-    CGRect frame =self.slideButton.frame;
-    frame.origin.x = self.view.bounds.size.width/2.0f;
-    self.slideButton.frame = frame;
-    [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
-    [self changeTextColor:1];
-}
-
-- (void) tappedShop:(id)sender {
-
-    CGRect frame =self.slideButton.frame;
-    frame.origin.x = self.view.bounds.size.width - 20;
-    self.slideButton.frame = frame;
+- (void) tapped:(UIGestureRecognizer *)gesture {
     
-    [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
-    [self changeTextColor:2];
+    CGRect frame =self.slideButton.frame;
+    
+    
+    if (gesture.view == self.chatLabel) {
+
+        frame.origin.x = 0.0f;
+        self.slideButton.frame = frame;
+        
+        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
+        [self changeTextColor:0];
+
+    } else if (gesture.view == self.designLabel) {
+    
+        frame.origin.x = self.view.bounds.size.width/2.0f;
+        self.slideButton.frame = frame;
+        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
+        [self changeTextColor:1];
+    } else if (gesture.view == self.shopLabel) {
+    
+        frame.origin.x = self.view.bounds.size.width - 20;
+        self.slideButton.frame = frame;
+        
+        [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
+        [self changeTextColor:2];
+
+    }
+    
+    
 }
+
 
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
