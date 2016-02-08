@@ -19,7 +19,7 @@ For example:
 	@property (nonatomic, retain) ViewController *vc2;
 	@property (nonatomic, retain) ViewController *vc3;
 
-Step 2.) Set up the frame of the View Controllers that you want to scroll through by setting the X coordinates of each View Controllers accordingly
+Step 3.) Set up the frame of the View Controllers that you want to scroll through by setting the X coordinates of each View Controllers accordingly
  
     **** NOTE!!!! ****
     - However, since the default of the scrollView height shorten by 100, account for the height of the View Controllers that the users are going to scroll through
@@ -29,9 +29,9 @@ Step 2.) Set up the frame of the View Controllers that you want to scroll throug
         b.) the second view controller's view has a frame of CGRectMake(self.view.bounds.size.width * 1, 0, self.view.bounds.size.width, self.view.bounds.size.height - 100)
         c.) the third view controller's view has a frame of CGRectMake(self.view.bounds.size.width * 2, 0, self.view.bounds.size.width, self.view.bounds.size.height - 100)
 
-Step 3.) addViewControllersToScrollView
+Step 4.) addViewControllersToScrollView
 
-Step 4.) addSubview SlidingViews to current view
+Step 5.) addSubview SlidingViews to current view
 
 
 <h3> Easy to use: </h3>
