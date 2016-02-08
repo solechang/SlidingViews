@@ -1,9 +1,10 @@
 <h1>SlidingViews</h1>
 
-Slide through 3 view controllers with a button slider
+What does SlidingViews do?
+	Slide through 3 view different controllers  with a button slider
 
 
-*Instructions for setting up and using SlidingViews:
+<h3>Instructions for setting up and using SlidingViews: </h3>
 
 Step 1.) Import
 	
