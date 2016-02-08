@@ -5,7 +5,7 @@ What does SlidingViews do?
 	Slide/scroll through 3 view different controllers with a button slider horizontally
 
 
-<h3>Instructions for setting up and using SlidingViews: </h3>
+<h3><u>Instructions:</u> </h3>
 
 Step 1.) Import
 	
