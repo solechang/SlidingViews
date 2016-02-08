@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B93E3CD01C6939D10082A1CD /* SlidingViews.m in Sources */ = {isa = PBXBuildFile; fileRef = B93E3CCF1C6939D10082A1CD /* SlidingViews.m */; };
 		B94348771C5C1E4B00F42D75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348761C5C1E4B00F42D75 /* main.m */; };
 		B943487A1C5C1E4B00F42D75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348791C5C1E4B00F42D75 /* AppDelegate.m */; };
 		B94348821C5C1E4B00F42D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94348811C5C1E4B00F42D75 /* Assets.xcassets */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B93E3CCE1C6939D10082A1CD /* SlidingViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidingViews.h; sourceTree = "<group>"; };
+		B93E3CCF1C6939D10082A1CD /* SlidingViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidingViews.m; sourceTree = "<group>"; };
 		B94348721C5C1E4B00F42D75 /* HomeePractice2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeePractice2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94348761C5C1E4B00F42D75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B94348781C5C1E4B00F42D75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				B94348BA1C5C34AE00F42D75 /* ShopTableViewController.m */,
 				B94348BC1C5C3BA100F42D75 /* DesignViewController.h */,
 				B94348BD1C5C3BA100F42D75 /* DesignViewController.m */,
+				B93E3CCE1C6939D10082A1CD /* SlidingViews.h */,
+				B93E3CCF1C6939D10082A1CD /* SlidingViews.m */,
 			);
 			name = "Chat Room VCs";
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				B943487A1C5C1E4B00F42D75 /* AppDelegate.m in Sources */,
 				B94348B81C5C2E9200F42D75 /* ContainerViewController.m in Sources */,
 				B94348B41C5C299D00F42D75 /* ChatTableViewController.m in Sources */,
+				B93E3CD01C6939D10082A1CD /* SlidingViews.m in Sources */,
 				B94348BB1C5C34AE00F42D75 /* ShopTableViewController.m in Sources */,
 				B94348771C5C1E4B00F42D75 /* main.m in Sources */,
 				B94348BE1C5C3BA100F42D75 /* DesignViewController.m in Sources */,

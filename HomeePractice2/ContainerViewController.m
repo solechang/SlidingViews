@@ -17,8 +17,7 @@
 @property (nonatomic, retain) DesignViewController *designVC;
 @property (nonatomic, retain) ShopTableViewController *shopTVC;
 
-@property (nonatomic) UISegmentedControl* segmentedControl;
-
+@property (nonatomic) float pastLocation;
 
 @property (nonatomic) UIView *sliderView;
 
@@ -26,14 +25,13 @@
 
 @property (nonatomic) UIView *slideButtonView;
 
-@property (nonatomic) BOOL scrollingFlag;
-
 
 @property (nonatomic) UILabel *chatLabel;
 @property (nonatomic) UILabel *designLabel;
 @property (nonatomic) UILabel *shopLabel;
 
-@property (nonatomic) int section;
+
+
 @end
 
 @implementation ContainerViewController
@@ -48,9 +46,7 @@
 
     [self createCustomSliderView];
     
-    // 3 sections: Chat, Design, and Shop
-    self.scrollingFlag = YES;
-
+    self.pastLocation = 0.0;
 }
 
 - (void) setUpView {
@@ -69,10 +65,7 @@
     self.scrollView.bounces = NO;
     self.scrollView.pagingEnabled = YES;
     
-    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*3, self.scrollView.bounds.size.height); //this must be the appropriate size!
-    
-    
-   
+    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*3, self.scrollView.bounds.size.height);
 }
 
 - (void) setupViewControllers {
@@ -148,50 +141,51 @@
 }
 
 - (void) tapped:(UIGestureRecognizer *)gesture {
-    
-    CGRect frame = self.slideButtonView.frame;
+
     if (gesture.view == self.chatLabel) {
-        frame.origin.x = 0.0f ;
+
         [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
         [self changeTextColor:0];
 
     } else if (gesture.view == self.designLabel) {
-        frame.origin.x = self.sliderView.bounds.size.width/2.0f - 50.0f;
+
 
         [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
         [self changeTextColor:1];
     } else if (gesture.view == self.shopLabel) {
         
-        frame.origin.x = self.sliderView.bounds.size.width - 100.0f;
+
         [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
         [self changeTextColor:2];
 
     }
-    self.slideButtonView.frame = frame;
     
 }
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    //record the position of the finger (x0)
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint location = [touch locationInView:self.sliderView];
+    self.pastLocation = location.x;
+    
+//     float sliderValue = location.x / self.view.bounds.size.width;
+//    NSLog(@"0.) self.pastLocation: %f location: %f", self.pastLocation, sliderValue);
+    
+}
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    self.scrollingFlag = NO;
     
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint location = [touch locationInView:self.sliderView];
-
+    
     if ([touch view] == self.slideButtonView) {
-   
-//        self.sliderButtonView.center.x
-        CGRect frame = self.slideButtonView.frame;
-        NSLog(@"0.) %f", location.x);
-        NSLog(@"1.) %f", frame.origin.x);
-        NSLog(@"2.) %f", location.x - frame.origin.x);
-        
-        
-        
-        frame.origin.x =  location.x - frame.origin.x;
-        self.slideButtonView.frame = frame;
-        
-        [self.scrollView setContentOffset:CGPointMake(2*location.x, 1)];
+        //figure out  which section the finger is in section (1,2,3) => (x1,x2,x3)
+        //calculate the difference between the initial position and the new position (X - x0)
+        //if you were in section1: x1 + (X-x0)
+
+        [self.scrollView setContentOffset:CGPointMake( 2*location.x, 1)];
+
+
     }
 }
 
@@ -206,37 +200,36 @@
         
         float sliderValue = location.x / self.view.bounds.size.width;
 
-        if (sliderValue > .25 && sliderValue < .75) {
-            // Design
-            self.section = 1;
+        if (sliderValue > .33 && sliderValue < .63) {
+            // Design (Middle Section)
+
             frame.origin.x = self.sliderView.bounds.size.width/2.0f - 50.0;
             [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*1, 0) animated:YES];
             [self changeTextColor:1];
             
-        } else if (sliderValue > .50) {
+        } else if (sliderValue > .63) {
 
-            // Shop
+            // Shop (Right Section)
             frame.origin.x = self.sliderView.bounds.size.width - 100.0f;
-            self.section = 2;
 
             [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*2, 0) animated:YES];
             [self changeTextColor:2];
-        } else if (sliderValue < .25) {
-            // Chat
-
+        } else if (sliderValue < .33) {
             
-            self.section = 0;
+            // Chat (Left Section)
             frame.origin.x = 0.0f;
             [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*0, 0) animated:YES];
             [self changeTextColor:0];
+            
         }
         
-          self.slideButtonView.frame = frame;
+//          self.slideButtonView.frame = frame;
 
 
     }
     
-    self.scrollingFlag = YES;
+
+    
 }
 
 - (void) changeTextColor :(int) label{
@@ -261,6 +254,8 @@
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     
+    // When the animation of the scrollView ends
+    // Need this when the user taps on the button sections
     CGRect frame = self.slideButtonView.frame;
     
     if (scrollView.contentOffset.x < 750.0/3.0) {
@@ -269,7 +264,6 @@
         
     } else if ((scrollView.contentOffset.x > 750.0/3.0) && scrollView.contentOffset.x < 750.0*(2.0/3.0)) {
         
-    
         frame.origin.x = self.sliderView.bounds.size.width/2.0f - 50.0f;
         
     } else if (scrollView.contentOffset.x > 750.0*(2.0/3.0)) {
@@ -279,36 +273,35 @@
 
     }
     self.slideButtonView.frame = frame;
-        NSLog(@"2.) %f", frame.origin.x);
 
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-//    NSLog(@"0.) %f",scrollView.contentOffset.x/((self.sliderView.bounds.size.width)/((self.sliderView.bounds.size.width/2) -50.0)));
-    
-    if (self.scrollingFlag ) {
-        
-        CGRect frame = self.slideButtonView.frame;
-        
-        frame.origin.x = ((scrollView.contentOffset.x-10)/
-                          ((self.sliderView.bounds.size.width)/
-                           ((self.sliderView.bounds.size.width/2) - 50.0)));
-        
-        
-        
-        if (frame.origin.x >= 0 && frame.origin.x <= self.sliderView.bounds.size.width - 100.0f) {
-            NSLog(@"10.) %f", frame.origin.x);
-            // Left end and Right end so that the sliderButton doesn't go out of bounds
-            self.slideButtonView.frame = frame;
-        }
+    // When the scrollView is scrolling
 
+    //    NSLog(@"0.) %f",scrollView.contentOffset.x/((self.sliderView.bounds.size.width)/((self.sliderView.bounds.size.width/2) -50.0)));
+
+    CGRect frame = self.slideButtonView.frame;
+
+    // -10 because that is the width size of the scrollView compared to view.bounds.size.width
+    frame.origin.x = ((scrollView.contentOffset.x-10)/
+                      ((self.sliderView.bounds.size.width)/
+                       ((self.sliderView.bounds.size.width/2) - 50.0)));
+    
+    if (frame.origin.x >= 0 && frame.origin.x <= self.sliderView.bounds.size.width - 100.0f) {
+        // 100.0f is the size of the button sections
+        // Left end and Right end so that the sliderButton doesn't go out of bounds
+        
+
+        self.slideButtonView.frame = frame;
     }
-    
-    
+
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    // scrollView stopped moving
     CGRect frame = self.slideButtonView.frame;
 
     if (scrollView.contentOffset.x < 750.0/3.0) {
