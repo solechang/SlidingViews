@@ -34,7 +34,7 @@ Step 3.) addViewControllersToScrollView
 Step 4.) addSubview SlidingViews to current view
 
 
-Easy to use:
+<h3> Easy to use: </h3>
 - From TestSlidingViewController.m's viewDidLoad will guide you on how to set up SlidingViews
 
 	****** Example code*****
