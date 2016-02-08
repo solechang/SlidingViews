@@ -22,7 +22,11 @@ Easy to use:
 
 *Instructions for setting up and using SlidingViews:
 
-Step 1.) Create 3 properties of the view controllers that you are going to display
+Step 1.) Import
+	
+	#import SlidingViews.h
+
+Step 2.) Create 3 properties of the view controllers that you are going to display
 	For example:
 		@property (nonatomic, retain) ViewController *vc1;
 		@property (nonatomic, retain) ViewController *vc2;
