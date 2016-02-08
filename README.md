@@ -20,11 +20,13 @@ Check out the Example folder
     	[self.view addSubview:sliding];
 
 
-- Instructions for setting up and using SlidingViews:
+*Instructions for setting up and using SlidingViews:
+
 Step 1.) Create 3 properties of the view controllers that you are going to display
-        - For example: @property (nonatomic, retain) ViewController *vc1;
-                       @property (nonatomic, retain) ViewController *vc2;
-                       @property (nonatomic, retain) ViewController *vc3;
+	For example:
+		@property (nonatomic, retain) ViewController *vc1;
+		@property (nonatomic, retain) ViewController *vc2;
+		@property (nonatomic, retain) ViewController *vc3;
 
 Step 2.) Set up the frame of the View Controllers that you want to scroll through by setting the X coordinates of each View Controllers accordingly
  
