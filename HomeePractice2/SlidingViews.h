@@ -12,7 +12,7 @@
 
 @property (nonatomic) UIView *sliderView;
 
-// The height of the scrollView is shorten by 120 because the Y coorindate starts at 120
+// The height of the scrollView is shorten by 100 because the Y coorindate starts at 100
 @property (nonatomic,strong) UIScrollView *scrollView;
 
 @property (nonatomic) UIView *sliderButtonView;
@@ -33,12 +33,12 @@
  * Set up the frame of the View Controllers that you want to scroll through by setting the X coordinates of each View Controllers accordingly
  
     **** NOTE!!!! ****
-    - However, since the default of the scrollView height shorten by 120, account for the height of the View Controllers that the users are going to scroll through
+    - However, since the default of the scrollView height shorten by 100, account for the height of the View Controllers that the users are going to scroll through
  
     For Example: make sure that
-        a.) The first view controller's view has a frame of CGRectMake(self.view.bounds.size.width * 0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 120)
-        b.) the second view controller's view has a frame of CGRectMake(self.view.bounds.size.width * 1, 0, self.view.bounds.size.width, self.view.bounds.size.height - 120)
-        c.) the third view controller's view has a frame of CGRectMake(self.view.bounds.size.width * 2, 0, self.view.bounds.size.width, self.view.bounds.size.height - 120)
+        a.) The first view controller's view has a frame of CGRectMake(self.view.bounds.size.width * 0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 100)
+        b.) the second view controller's view has a frame of CGRectMake(self.view.bounds.size.width * 1, 0, self.view.bounds.size.width, self.view.bounds.size.height - 100)
+        c.) the third view controller's view has a frame of CGRectMake(self.view.bounds.size.width * 2, 0, self.view.bounds.size.width, self.view.bounds.size.height - 100)
 
  *  Step 3.) addViewControllersToScrollView
  *  Step 4.) addSubview SlidingViews to current view

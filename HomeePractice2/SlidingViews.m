@@ -25,8 +25,8 @@
 - (void) setUpScrollView {
 
     // Depending on the height of the slider you want to use, users can change the height accordingly
-    // ScrollView's Y coordinate starts at 120
-    // Shorten by the view's height by 120 to fit in screen
+    // ScrollView's Y coordinate starts at 100
+    // Shorten by the view's height by 100 to fit in screen
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 100, self.bounds.size.width, self.bounds.size.height - 100)];
     
     self.scrollView.delegate = self;
