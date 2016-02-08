@@ -1,4 +1,4 @@
-SlidingViews
+<h1>SlidingViews</h1>
 
 Slide through 3 view controllers with a button slider
 
