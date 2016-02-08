@@ -2,7 +2,7 @@
 //  Room.m
 //  HomeePractice2
 //
-//  Created by Jake Choi on 2/1/16.
+//  Created by Chang Choi on 2/1/16.
 //  Copyright © 2016 solechang. All rights reserved.
 //
 

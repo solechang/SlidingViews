@@ -24,7 +24,7 @@
 }
 
 - (void) initializeViewElements{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*self.myPosition, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*1, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     
     self.view = view;
     

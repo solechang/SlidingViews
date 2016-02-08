@@ -30,8 +30,6 @@
 @property (nonatomic) UILabel *designLabel;
 @property (nonatomic) UILabel *shopLabel;
 
-
-
 @end
 
 @implementation ContainerViewController

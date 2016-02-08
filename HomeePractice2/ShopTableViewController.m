@@ -23,7 +23,7 @@
 
 - (void) initializeTableView {
     
-    UITableView *tV = [[UITableView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*self.myPosition, 0, self.view.bounds.size.width, self.view.bounds.size.height-120)];
+    UITableView *tV = [[UITableView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*2, 0, self.view.bounds.size.width, self.view.bounds.size.height-120)];
     
     self.tableView = tV;
     

@@ -9,6 +9,7 @@
 #import "MainHomeeViewController.h"
 #import "Room.h"
 #import "ContainerViewController.h"
+#import "TestSlidingViewController.h"
 
 @interface MainHomeeViewController () 
 @property (nonatomic) UIScrollView *scrollView;
@@ -125,9 +126,9 @@
 
 }
 -(void)showRoom: (UIView *) touchView{
-    
+    TestSlidingViewController *containerTVC = [[TestSlidingViewController alloc] init];
     // Check which view is clicked so that we can approriately display the correct content
-    ContainerViewController *containerTVC = [[ContainerViewController alloc] init];
+//    ContainerViewController *containerTVC = [[ContainerViewController alloc] init];
     [self.navigationController pushViewController:containerTVC animated:YES];
     
 }
