@@ -110,6 +110,16 @@
 			name = SlidingViews;
 			sourceTree = "<group>";
 		};
+		B93E3CD51C69570A0082A1CD /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				B93E3CD11C69468A0082A1CD /* TestSlidingViewController.h */,
+				B93E3CD21C69468A0082A1CD /* TestSlidingViewController.m */,
+				B94348B51C5C29A600F42D75 /* Example VCs */,
+			);
+			name = Example;
+			sourceTree = "<group>";
+		};
 		B94348691C5C1E4B00F42D75 = {
 			isa = PBXGroup;
 			children = (
@@ -133,10 +143,10 @@
 		B94348741C5C1E4B00F42D75 /* HomeePractice2 */ = {
 			isa = PBXGroup;
 			children = (
+				B93E3CD51C69570A0082A1CD /* Example */,
 				B93E3CD41C6956BE0082A1CD /* SlidingViews */,
 				B991EF791C5F08A7005E7C0D /* Images */,
 				B991EF7A1C5F08BC005E7C0D /* Main Homee VC */,
-				B94348B51C5C29A600F42D75 /* Chat Room VCs */,
 				B94348781C5C1E4B00F42D75 /* AppDelegate.h */,
 				B94348791C5C1E4B00F42D75 /* AppDelegate.m */,
 				B94348AE1C5C241000F42D75 /* Main.storyboard */,
@@ -174,7 +184,7 @@
 			path = HomeePractice2UITests;
 			sourceTree = "<group>";
 		};
-		B94348B51C5C29A600F42D75 /* Chat Room VCs */ = {
+		B94348B51C5C29A600F42D75 /* Example VCs */ = {
 			isa = PBXGroup;
 			children = (
 				B94348B61C5C2E9200F42D75 /* ContainerViewController.h */,
@@ -185,10 +195,8 @@
 				B94348BA1C5C34AE00F42D75 /* ShopTableViewController.m */,
 				B94348BC1C5C3BA100F42D75 /* DesignViewController.h */,
 				B94348BD1C5C3BA100F42D75 /* DesignViewController.m */,
-				B93E3CD11C69468A0082A1CD /* TestSlidingViewController.h */,
-				B93E3CD21C69468A0082A1CD /* TestSlidingViewController.m */,
 			);
-			name = "Chat Room VCs";
+			name = "Example VCs";
 			sourceTree = "<group>";
 		};
 		B991EF791C5F08A7005E7C0D /* Images */ = {

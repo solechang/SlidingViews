@@ -126,9 +126,9 @@
 
 }
 -(void)showRoom: (UIView *) touchView{
-    TestSlidingViewController *containerTVC = [[TestSlidingViewController alloc] init];
+
     // Check which view is clicked so that we can approriately display the correct content
-//    ContainerViewController *containerTVC = [[ContainerViewController alloc] init];
+    TestSlidingViewController *containerTVC = [[TestSlidingViewController alloc] init];
     [self.navigationController pushViewController:containerTVC animated:YES];
     
 }

@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  HomeePractice2
 //
-//  Created by Jake Choi on 1/29/16.
+//  Created by Chang Choi on 1/29/16.
 //  Copyright © 2016 solechang. All rights reserved.
 //
 

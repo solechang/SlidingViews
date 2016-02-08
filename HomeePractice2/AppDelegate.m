@@ -2,18 +2,17 @@
 //  AppDelegate.m
 //  HomeePractice2
 //
-//  Created by Jake Choi on 1/29/16.
+//  Created by Chang Choi on 1/29/16.
 //  Copyright © 2016 solechang. All rights reserved.
 //
 
 #import "AppDelegate.h"
 
 #import "MainHomeeViewController.h"
-
-
+#import "TestSlidingViewController.h"
 @interface AppDelegate ()
 
-@property (nonatomic, strong) MainHomeeViewController *homeeTVC;
+@property (nonatomic, strong) TestSlidingViewController *homeeTVC;
 
 @end
 
@@ -25,7 +24,7 @@
  
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.homeeTVC = [[MainHomeeViewController alloc] init];
+    self.homeeTVC = [[TestSlidingViewController alloc] init];
     UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:self.homeeTVC];
 
     self.window.rootViewController = navVC;
