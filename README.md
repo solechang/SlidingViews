@@ -46,3 +46,7 @@ Easy to use:
     	sliding.label2.text = @"THugLYfe";
     
     	[self.view addSubview:sliding];
+
+
+
+
