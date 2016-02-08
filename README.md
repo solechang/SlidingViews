@@ -5,18 +5,19 @@ Slide through 3 view controllers with a button slider
 Check out the Example folder
 - Copied from TestSlidingViewController.m's viewDidLoad will guide you on how to set up SlidingViews
 
-	****** Example code*******
-    SlidingViews *sliding = [[SlidingViews alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+	****** Example code*****
+
+    	SlidingViews *sliding = [[SlidingViews alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     
-    self.chatTVC = [[ChatTableViewController alloc] init];
-    self.shopTVC = [[ShopTableViewController alloc] init];
-    self.designVC = [[DesignViewController alloc] init];
-    [sliding addViewControllersToScrollView:self.chatTVC :self.designVC :self.shopTVC];
+    	self.chatTVC = [[ChatTableViewController alloc] init];
+    	self.shopTVC = [[ShopTableViewController alloc] init];
+    	self.designVC = [[DesignViewController alloc] init];
+    	[sliding addViewControllersToScrollView:self.chatTVC :self.designVC :self.shopTVC];
     
-    // Users can change the section names
-    sliding.label2.text = @"THugLYfe";
+    	// Users can change the section names
+    	sliding.label2.text = @"THugLYfe";
     
-    [self.view addSubview:sliding];
+    	[self.view addSubview:sliding];
 
 
 - Instructions for setting up and using SlidingViews:
