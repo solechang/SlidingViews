@@ -2,7 +2,7 @@
 //  ShopTableViewController.m
 //  HomeePractice2
 //
-//  Created by Jake Choi on 1/29/16.
+//  Created by Chang Choi on 1/29/16.
 //  Copyright © 2016 solechang. All rights reserved.
 //
 
@@ -23,7 +23,7 @@
 
 - (void) initializeTableView {
     
-    UITableView *tV = [[UITableView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*2, 0, self.view.bounds.size.width, self.view.bounds.size.height-120)];
+    UITableView *tV = [[UITableView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*2, 0, self.view.bounds.size.width, self.view.bounds.size.height-100)];
     
     self.tableView = tV;
     

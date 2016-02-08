@@ -2,7 +2,7 @@
 //  TestSlidingViewController.h
 //  HomeePractice2
 //
-//  Created by Jake Choi on 2/8/16.
+//  Created by Chang Choi on 2/8/16.
 //  Copyright © 2016 solechang. All rights reserved.
 //
 

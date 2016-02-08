@@ -2,13 +2,12 @@
 //  TestSlidingViewController.m
 //  HomeePractice2
 //
-//  Created by Jake Choi on 2/8/16.
+//  Created by Chang Choi on 2/8/16.
 //  Copyright © 2016 solechang. All rights reserved.
 //
 
 #import "TestSlidingViewController.h"
 #import "SlidingViews.h"
-
 #import "ChatTableViewController.h"
 #import "ShopTableViewController.h"
 #import "DesignViewController.h"
@@ -35,6 +34,7 @@
     self.designVC = [[DesignViewController alloc] init];
     [sliding addViewControllersToScrollView:self.chatTVC :self.designVC :self.shopTVC];
     
+    // Users can change the section names
     sliding.label2.text = @"THugLYfe";
     
     [self.view addSubview:sliding];

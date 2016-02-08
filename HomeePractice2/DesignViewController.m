@@ -2,7 +2,7 @@
 //  ShopViewController.m
 //  HomeePractice2
 //
-//  Created by Jake Choi on 1/29/16.
+//  Created by Chang Choi on 1/29/16.
 //  Copyright © 2016 solechang. All rights reserved.
 //
 
@@ -24,7 +24,7 @@
 }
 
 - (void) initializeViewElements{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*1, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*1, 0, self.view.bounds.size.width, self.view.bounds.size.height - 100)];
     
     self.view = view;
     

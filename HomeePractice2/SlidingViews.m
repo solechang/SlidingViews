@@ -2,7 +2,7 @@
 //  SlidingViews.m
 //  HomeePractice2
 //
-//  Created by Jake Choi on 2/8/16.
+//  Created by Chang Choi on 2/8/16.
 //  Copyright © 2016 solechang. All rights reserved.
 //
 
@@ -25,7 +25,9 @@
 - (void) setUpScrollView {
 
     // Depending on the height of the slider you want to use, users can change the height accordingly
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 120, self.bounds.size.width, self.bounds.size.height - 120)];
+    // ScrollView's Y coordinate starts at 120
+    // Shorten by the view's height by 120 to fit in screen
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 100, self.bounds.size.width, self.bounds.size.height - 100)];
     
     self.scrollView.delegate = self;
     
@@ -170,11 +172,7 @@
             [self changeTextColor:0];
             
         }
-        
     }
-    
-    
-    
 }
 
 - (void) changeTextColor :(int) label{
@@ -182,7 +180,9 @@
         self.label1.textColor = [UIColor colorWithRed: 180.0/255.0 green: 238.0/255.0 blue:180.0/255.0 alpha: 1.0];
         self.label3.textColor= [UIColor blackColor];
         self.label2.textColor = [UIColor blackColor];
+        
     } else if (label == 1) {
+        
         self.label1.textColor = [UIColor blackColor];
         self.label3.textColor= [UIColor blackColor];
         self.label2.textColor = [UIColor colorWithRed: 180.0/255.0 green: 238.0/255.0 blue:180.0/255.0 alpha: 1.0];
@@ -223,9 +223,6 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     // When the scrollView is scrolling
-    
-    //    NSLog(@"0.) %f",scrollView.contentOffset.x/((self.sliderView.bounds.size.width)/((self.sliderView.bounds.size.width/2) -50.0)));
-    
     CGRect frame = self.sliderButtonView.frame;
     
     // -10 because that is the width size of the scrollView compared to view.bounds.size.width
@@ -239,28 +236,28 @@
         
         self.sliderButtonView.frame = frame;
     }
-    
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    
     // scrollView stopped moving
-    CGRect frame = self.sliderButtonView.frame;
     
+    CGRect frame = self.sliderButtonView.frame;
+
     if (scrollView.contentOffset.x < 750.0/3.0) {
+        // First section
         
         frame.origin.x = 0.0f ;
         [self changeTextColor:0];
         
     } else if ((scrollView.contentOffset.x > 750.0/3.0) && scrollView.contentOffset.x < 750.0*(2.0/3.0)) {
-        
+        // Middle section
         
         frame.origin.x = self.sliderView.bounds.size.width/2.0f - 50.0f;
         
         [self changeTextColor:1];
         
     } else if (scrollView.contentOffset.x > 750.0*(2.0/3.0)) {
-        
+        // 3rd section
         
         frame.origin.x = self.sliderView.bounds.size.width - 100.0f;
         [self changeTextColor:2];
