@@ -2,7 +2,7 @@
 
 What does SlidingViews do?
 
-	Slide/ scroll through 3 view different controllers with a button slider horizontally
+	Slide/scroll through 3 view different controllers with a button slider horizontally
 
 
 <h3>Instructions for setting up and using SlidingViews: </h3>
@@ -12,7 +12,9 @@ Step 1.) Import
 	#import SlidingViews.h
 
 Step 2.) Create 3 properties of the view controllers that you are going to display
+
 	For example:
+
 		@property (nonatomic, retain) ViewController *vc1;
 		@property (nonatomic, retain) ViewController *vc2;
 		@property (nonatomic, retain) ViewController *vc3;
