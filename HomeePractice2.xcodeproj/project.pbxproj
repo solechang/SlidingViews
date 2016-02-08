@@ -21,8 +21,8 @@
 		B94348B81C5C2E9200F42D75 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348B71C5C2E9200F42D75 /* ContainerViewController.m */; };
 		B94348BB1C5C34AE00F42D75 /* ShopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348BA1C5C34AE00F42D75 /* ShopTableViewController.m */; };
 		B94348BE1C5C3BA100F42D75 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94348BD1C5C3BA100F42D75 /* DesignViewController.m */; };
-		B9EBD0751C5FDAB000F9F0DE /* MainHomeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EBD0741C5FDAB000F9F0DE /* MainHomeeViewController.m */; };
-		B9EBD0781C5FE0AB00F9F0DE /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EBD0771C5FE0AB00F9F0DE /* Room.m */; };
+		B9BADDD51C695D14008B2A78 /* MainHomeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BADDD21C695D14008B2A78 /* MainHomeeViewController.m */; };
+		B9BADDD61C695D14008B2A78 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BADDD41C695D14008B2A78 /* Room.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,10 +70,10 @@
 		B94348BA1C5C34AE00F42D75 /* ShopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewController.m; sourceTree = "<group>"; };
 		B94348BC1C5C3BA100F42D75 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		B94348BD1C5C3BA100F42D75 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
-		B9EBD0731C5FDAB000F9F0DE /* MainHomeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainHomeeViewController.h; sourceTree = "<group>"; };
-		B9EBD0741C5FDAB000F9F0DE /* MainHomeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainHomeeViewController.m; sourceTree = "<group>"; };
-		B9EBD0761C5FE0AB00F9F0DE /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
-		B9EBD0771C5FE0AB00F9F0DE /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+		B9BADDD11C695D14008B2A78 /* MainHomeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainHomeeViewController.h; sourceTree = "<group>"; };
+		B9BADDD21C695D14008B2A78 /* MainHomeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainHomeeViewController.m; sourceTree = "<group>"; };
+		B9BADDD31C695D14008B2A78 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+		B9BADDD41C695D14008B2A78 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,10 +210,10 @@
 		B991EF7A1C5F08BC005E7C0D /* Main Homee VC */ = {
 			isa = PBXGroup;
 			children = (
-				B9EBD0761C5FE0AB00F9F0DE /* Room.h */,
-				B9EBD0771C5FE0AB00F9F0DE /* Room.m */,
-				B9EBD0731C5FDAB000F9F0DE /* MainHomeeViewController.h */,
-				B9EBD0741C5FDAB000F9F0DE /* MainHomeeViewController.m */,
+				B9BADDD11C695D14008B2A78 /* MainHomeeViewController.h */,
+				B9BADDD21C695D14008B2A78 /* MainHomeeViewController.m */,
+				B9BADDD31C695D14008B2A78 /* Room.h */,
+				B9BADDD41C695D14008B2A78 /* Room.m */,
 			);
 			name = "Main Homee VC";
 			sourceTree = "<group>";
@@ -349,16 +349,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9EBD0781C5FE0AB00F9F0DE /* Room.m in Sources */,
 				B943487A1C5C1E4B00F42D75 /* AppDelegate.m in Sources */,
 				B94348B81C5C2E9200F42D75 /* ContainerViewController.m in Sources */,
 				B94348B41C5C299D00F42D75 /* ChatTableViewController.m in Sources */,
 				B93E3CD01C6939D10082A1CD /* SlidingViews.m in Sources */,
 				B93E3CD31C69468A0082A1CD /* TestSlidingViewController.m in Sources */,
+				B9BADDD61C695D14008B2A78 /* Room.m in Sources */,
 				B94348BB1C5C34AE00F42D75 /* ShopTableViewController.m in Sources */,
 				B94348771C5C1E4B00F42D75 /* main.m in Sources */,
+				B9BADDD51C695D14008B2A78 /* MainHomeeViewController.m in Sources */,
 				B94348BE1C5C3BA100F42D75 /* DesignViewController.m in Sources */,
-				B9EBD0751C5FDAB000F9F0DE /* MainHomeeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
