@@ -5,6 +5,7 @@ Slide through 3 view controllers with a button slider
 Check out the Example folder
 - Copied from TestSlidingViewController.m's viewDidLoad will guide you on how to set up SlidingViews
 
+	****** Example code*******
     SlidingViews *sliding = [[SlidingViews alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     
     self.chatTVC = [[ChatTableViewController alloc] init];
@@ -35,4 +36,5 @@ Step 2.) Set up the frame of the View Controllers that you want to scroll throug
         c.) the third view controller's view has a frame of CGRectMake(self.view.bounds.size.width * 2, 0, self.view.bounds.size.width, self.view.bounds.size.height - 120)
 
 Step 3.) addViewControllersToScrollView
+
 Step 4.) addSubview SlidingViews to current view
